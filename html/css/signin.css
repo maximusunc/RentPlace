@@ -1,0 +1,87 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+body {
+  background: #136289;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h3 {
+  color: white;
+  font-family: tahoma;
+}
+
+h4 { 
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+color: white;
+padding: 90px;
+font-family: tahoma;
+line-height: 50px;
+font-size: 35px;
+}
+
+h5 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.input-field.col.s6 {
+  width: 300px;
+  display: block;
+}
+
+.titleimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background: #227c7c;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.waves-effect.waves-teal.btn-large {
+  background-color: #2af42a;
+  display: inline-block;
+}
+
+.page-footer {
+  background: #2af42a;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.footimg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  padding: 5px;
+}
+
+.aptsimg {
+  margin-top: -15px;
+  margin-left: 30px;
+  margin-right: auto;
+  position: center;
+}
