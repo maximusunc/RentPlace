@@ -9,7 +9,7 @@ const serviceReqSchema = new Schema({
     description: { type: String, required: true },
     notes: String,
     date: { type: Date, default: Date.now },
-    completed: { type: boolean, default: false }
+    completed: { type: Boolean, default: false }
 });
 
 const ServiceReq = mongoose.model("ServiceReq", serviceReqSchema);

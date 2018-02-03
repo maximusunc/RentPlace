@@ -17,7 +17,10 @@ app.use(routes);
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/rentplace"
+  process.env.MONGODB_URI || "mongodb://localhost/rentplace",
+  {
+    useMongoClient: true
+  }
 );
 
 // Start the API server
