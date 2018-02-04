@@ -11,6 +11,9 @@ const propertySchema = new Schema({
     zip: {
         type: String, 
         required: true,
+
+        // See user.js for a note about validate
+        
         // validate: {
         //     validator: isPostalCode,
         //     message: 'Invalid Zip Code'

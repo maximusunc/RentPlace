@@ -8,6 +8,10 @@ const userSchema = new Schema({
     email: {
         type: String, required:true,
         index: { unique: true },
+
+        // looking at the validator npm docs, these validations have to happen in the server, before they go to the database.
+        // I was getting errors because mongoose doesn't support validator in its schemas.
+        
         // validate: { 
         //     validator: isEmail, 
         //     message: 'Invalid email.' 

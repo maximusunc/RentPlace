@@ -12,7 +12,6 @@ class SigninCard extends Component {
             <div className="card small">
                 <div className="card-content">
                     <h3>Sign In/Register</h3>
-                    <h6><strong>I am an owner/property manager:</strong></h6>
                 
                     <div className="row">
                         <form className="col s12">
