@@ -5,12 +5,14 @@ module.exports = {
   findAll: function(req, res) {
     db.Property
       .find(req.query)
+      .populate('_landlord')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
     db.Property
       .findById(req.params.id)
+      .populate('_landlord')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

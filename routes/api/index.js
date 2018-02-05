@@ -3,8 +3,8 @@ const userRoutes = require("./users");
 const propertyRoutes = require("./properties");
 
 // User routes
-router.use("/api/users", userRoutes);
+router.use("/users", userRoutes);
 // Property routes
-router.use("/api/properties", propertyRoutes);
+router.use("/properties", propertyRoutes);
 
 module.exports = router;
