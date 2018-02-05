@@ -11,10 +11,13 @@ const propertySchema = new Schema({
     zip: {
         type: String, 
         required: true,
-        validate: {
-            validator: isPostalCode,
-            message: 'Invalid Zip Code'
-        },
+
+        // See user.js for a note about validate
+        
+        // validate: {
+        //     validator: isPostalCode,
+        //     message: 'Invalid Zip Code'
+        // },
     },
     leaseStart: { type: Date },
     leaseEnd: { type: Date },

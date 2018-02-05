@@ -1,0 +1,24 @@
+body {
+    background: #136289;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h4 {
+    color: white;
+    font-family: tahoma;
+    line-height: 50px;
+    font-size: 35px;
+}
+
+h3 {
+    color: white;
+    font-family: tahoma;
+    line-height: 50px;
+    font-size: 40px;
+}
