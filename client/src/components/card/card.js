@@ -10,7 +10,7 @@ const Card = () =>
         </div>
         <div className="card-action">
             <Link className="waves-effect waves-teal btn-large" to="/signin"><i className="material-icons left">lock_open</i>Sign In</Link>
-            <Link className="waves-effect waves-teal btn-large" to="/signin"><i className="material-icons left">add</i>Create an Acount</Link>
+            <Link className="waves-effect waves-teal btn-large" to="/signup"><i className="material-icons left">add</i>Create an Acount</Link>
         </div>
     </div>;
 

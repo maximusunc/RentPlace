@@ -1,15 +1,19 @@
 import React, { Component } from "react";
+import Container from "../components/container";
+import NewAccCard from "../components/newAccCard";
 
-class newAccount extends Component {
+class NewAccount extends Component {
     state = {
 
     };
 
     render() {
         return (
-
+            <Container>
+                <NewAccCard />
+            </Container>
         );
     };
 };
 
-export default newAccount;
+export default NewAccount;
