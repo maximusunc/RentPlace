@@ -12,8 +12,7 @@ const defaultState = {
     city: "",
     state: "",
     zip: "",
-    phone: "",
-    password: ""
+    phone: ""
 };
 
 class NewAccCard extends Component {
@@ -48,7 +47,7 @@ class NewAccCard extends Component {
         return(
             <div className="card">
                 <div className="card-title">
-                    <h4>Create Account</h4>
+                    <h4>Your info:</h4>
                 </div>
                 <div className="card-content">
                     <div className="row">
@@ -96,16 +95,6 @@ class NewAccCard extends Component {
                                 <div className="input-field col s4">
                                     <input name="zip" value={this.state.zip} onChange={this.handleInputChange} id="zip" type="text" className="validate" />
                                     <label htmlFor="zip">Zip Code</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s6">
-                                    <input name="email" value={this.state.email} onChange={this.handleInputChange} id="email" type="text" className="validate" />
-                                    <label htmlFor="email">Email</label>
-                                </div>
-                                <div className="input-field col s6">
-                                    <input name="password" value={this.state.password} onChange={this.handleInputChange} id="password" type="password" className="validate" />
-                                    <label htmlFor="password">Password</label>
                                 </div>
                             </div>
                         </form>
