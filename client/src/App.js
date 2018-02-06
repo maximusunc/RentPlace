@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Splash from "./pages/home";
 import Signin from "./pages/signin";
+import NewAccount from "./pages/newAccount";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import "./App.css";
@@ -15,6 +16,7 @@ const App = () =>
         <Switch>
           <Route exact path="/" component={Splash} />
           <Route exact path="/signin" component={Signin} />
+          <Route exact path="/signup" component={NewAccount} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
         <Footer />
