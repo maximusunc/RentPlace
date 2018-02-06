@@ -3,12 +3,12 @@ const usersController = require("../../controllers/usersController");
 const propertiesController = require("../../controllers/propertiesController");
 
 // Matches with "/api/users"
-router.route("/api/users")
+router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
 
 // Matches with "/api/users/:id"
-router.route("/api/users/:id")
+router.route("/")
   .get(propertiesController.findById)
   .put(propertiesController.update)
   .delete(propertiesController.remove);
