@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('mongoose-type-email');
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
@@ -11,13 +12,6 @@ const propertySchema = new Schema({
     zip: {
         type: String, 
         required: true,
-
-        // See user.js for a note about validate
-        
-        // validate: {
-        //     validator: isPostalCode,
-        //     message: 'Invalid Zip Code'
-        // },
     },
     leaseStart: { type: Date },
     leaseEnd: { type: Date },
