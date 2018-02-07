@@ -27,6 +27,7 @@ class NewAccCard extends Component {
     };
     
     handleFormSubmit = (event) => {
+        console.log("clicked create new user");
         event.preventDefault();
         API.createUser({
             name: this.state.name,
