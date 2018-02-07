@@ -1,0 +1,54 @@
+body {
+  background: #136289;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h4 {
+  color: white;
+  font-family: tahoma;
+  font-size: 35px;
+  position: relative;
+  line-height: 100px;
+}
+
+h5 {
+  position: relative;
+  transform: translateY(-20%);
+  text-align: center;
+}
+
+#tabs-swipe-demo {
+  background-color: #227c7c;
+  text-decoration-color: red;
+}
+
+#test-swipe-1 {
+  color: white;
+  background: #136289;
+}
+
+#test-swipe-2 {
+  color: white;
+  background: #136289;
+}
+
+.col.s12.m12 {
+  margin-top: 50px;
+}
+
+.titleimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background: #227c7c;
+  text-align: center;
+}
+
