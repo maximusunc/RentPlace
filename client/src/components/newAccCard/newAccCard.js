@@ -52,7 +52,7 @@ class NewAccCard extends Component {
                 </div>
                 <div className="card-content">
                     <div className="row">
-                        <form className="col s12">
+                        <form className="col s12" onSubmit={this.handleFormSubmit}>
                             <div className="row">
                                 <div className="col s12">
                                     <input name="selected" value="landlord" onChange={this.handleInputChange} type="radio" id="landlord" checked={this.state.selected==="landlord"} />
@@ -64,47 +64,47 @@ class NewAccCard extends Component {
                             </div>
                             <div className="row">
                                 <div className="input-field col s6">
-                                    <input name="name" value={this.state.name} onChange={this.handleInputChange} id="full_name" type="text" className="validate" />
+                                    <input name="name" value={this.state.name || ""} onChange={this.handleInputChange} id="full_name" type="text" className="validate" />
                                     <label htmlFor="full_name">Full Name</label>
                                 </div>
                                 <div className="input-field col s6">
-                                    <input name="phone" value={this.state.phone} onChange={this.handleInputChange} id="phone" type="text" className="validate" />
+                                    <input name="phone" value={this.state.phone || ""} onChange={this.handleInputChange} id="phone" type="text" className="validate" />
                                     <label htmlFor="phone">Phone #</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input name="address1" value={this.state.address1} onChange={this.handleInputChange} id="address1" type="text" className="validate" />
+                                    <input name="address1" value={this.state.address1 || ""} onChange={this.handleInputChange} id="address1" type="text" className="validate" />
                                     <label htmlFor="address1">Address 1</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input name="address2" value={this.state.address2} onChange={this.handleInputChange} id="address2" type="text" className="validate" />
+                                    <input name="address2" value={this.state.address2 || ""} onChange={this.handleInputChange} id="address2" type="text" className="validate" />
                                     <label htmlFor="address2">Address 2</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s4">
-                                    <input name="city" value={this.state.city} onChange={this.handleInputChange} id="city" type="text" className="validate" />
+                                    <input name="city" value={this.state.city || ""} onChange={this.handleInputChange} id="city" type="text" className="validate" />
                                     <label htmlFor="city">City</label>
                                 </div>
                                 <div className="input-field col s4">
-                                    <input name="state" value={this.state.state} onChange={this.handleInputChange} id="state" type="text" className="validate" />
+                                    <input name="state" value={this.state.state || ""} onChange={this.handleInputChange} id="state" type="text" className="validate" />
                                     <label htmlFor="state">State</label>
                                 </div>
                                 <div className="input-field col s4">
-                                    <input name="zip" value={this.state.zip} onChange={this.handleInputChange} id="zip" type="text" className="validate" />
+                                    <input name="zip" value={this.state.zip || ""} onChange={this.handleInputChange} id="zip" type="text" className="validate" />
                                     <label htmlFor="zip">Zip Code</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s6">
-                                    <input name="email" value={this.state.email} onChange={this.handleInputChange} id="email" type="text" className="validate" />
+                                    <input name="email" value={this.state.email || ""} onChange={this.handleInputChange} id="email" type="text" className="validate" />
                                     <label htmlFor="email">Email</label>
                                 </div>
                                 <div className="input-field col s6">
-                                    <input name="password" value={this.state.password} onChange={this.handleInputChange} id="password" type="password" className="validate" />
+                                    <input name="password" value={this.state.password || ""} onChange={this.handleInputChange} id="password" type="password" className="validate" />
                                     <label htmlFor="password">Password</label>
                                 </div>
                             </div>

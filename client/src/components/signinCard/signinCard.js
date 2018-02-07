@@ -11,7 +11,7 @@ class SigninCard extends Component {
         return (
             <div className="card small">
                 <div className="card-content">
-                    <h3>Sign In/Register</h3>
+                    <h3>Sign In</h3>
                 
                     <div className="row">
                         <form className="col s12">
@@ -19,12 +19,12 @@ class SigninCard extends Component {
                                 <div className="input-field col s6">
                                     <i className="material-icons prefix">email</i>
                                     <input id="icon_prefix" type="email" className="validate" />
-                                    <label for="icon_prefix">E-mail</label>
+                                    <label htmlFor="icon_prefix">E-mail</label>
                                 </div>
                                 <div className="input-field col s6">
                                     <i className="material-icons prefix">security</i>
                                     <input id="icon_telephone" type="password" className="validate" />
-                                    <label for="icon_telephone">Password</label>
+                                    <label htmlFor="icon_telephone">Password</label>
                                 </div>
                             </div>
                         </form>
