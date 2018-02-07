@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const mongooseEmail = require('mongoose-type-email');
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
