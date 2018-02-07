@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./signinCard.css";
-import { Link } from "react-router-dom";
 
 class SigninCard extends Component {
     state = {
@@ -29,9 +28,6 @@ class SigninCard extends Component {
                             </div>
                         </form>
                     </div>
-                </div>
-                <div className="card-action">
-                    <Link className="waves-effect waves-teal btn-large" to="/"><i className="material-icons left">home</i>Home</Link>
                 </div>
             </div>
         );
