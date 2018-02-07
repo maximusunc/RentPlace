@@ -1,7 +1,6 @@
 import React from "react";
 import "./newAccCard.css";
 
-
 const NewAccCard = props =>
     <div className="card">
         <div className="card-title">

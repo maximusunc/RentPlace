@@ -6,6 +6,7 @@ module.exports = {
     db.Property
       .find(req.query)
       .populate('_landlord')
+      .populate('_tenant')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -13,6 +14,7 @@ module.exports = {
     db.Property
       .findById(req.params.id)
       .populate('_landlord')
+      .populate('_tenant')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
