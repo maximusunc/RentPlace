@@ -1,11 +1,7 @@
 body {
   background: #136289;
-  flex-direction: column;
-  font-weight: 700;
-}
-
-main {
-  flex: 1 0 auto;
+  font-weight: 500;
+  font-color: #99cfe0;
 }
 
 h4 {
@@ -20,27 +16,55 @@ h5 {
   position: relative;
   transform: translateY(-20%);
   text-align: center;
+  margin-top: 30px;
+}
+
+li {
+  color: #99cfe0;
+}
+
+.tabs .tab a.active {
+  color: #2af42a;
+  font-size: 18px;
+}
+
+.tabs .tab a:hover {
+  color: #2af42a;
+  font-size: 18px;
+}
+
+.tabs .tab a {
+  color: #99cfe0;
+  font-size: 18px;
+}
+
+.row {
+  margin-top: 20px;
 }
 
 #tabs-swipe-demo {
   background-color: #227c7c;
-  text-decoration-color: red;
+  float: center;
 }
 
 #test-swipe-1 {
   color: white;
-  background: #136289;
+  background: #227c7c;
+  height: 500px;
 }
 
 #test-swipe-2 {
   color: white;
-  background: #136289;
+  background: #227c7c;
 }
 
 .col.s12.m12 {
   margin-top: 50px;
 }
 
+.col.s12 {
+  background: #227c7c;
+}
 .titleimg {
   display: block;
   margin-left: auto;
@@ -50,5 +74,38 @@ h5 {
 .card {
   background: #227c7c;
   text-align: center;
+  size: 100%;
 }
 
+.page-footer {
+  background: #2af42a;
+  opacity: 0.85;
+  margin: 0;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 50px;
+}
+
+.footer-copyright {
+  opacity: 0.75;
+  position: relative;
+}
+
+.footimg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  padding: 5px;
+}
+
+.aptsimg {
+  margin-top: -15px;
+  margin-left: 30px;
+  margin-right: auto;
+  position: center;
+}
