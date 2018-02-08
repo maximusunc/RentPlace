@@ -30,7 +30,7 @@ class ServiceReq extends Component {
         return (
             <div className="card">
                 <div className="card-title">
-                    <h4>Create Account</h4>
+                    <h4>Create Service Request</h4>
                 </div>
                 <div className="card-content">
                     <div className="row">

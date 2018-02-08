@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from './App';
+import Splash from './pages/home';
 import UserPage from "./pages/userPage";
 
 class Home extends Component {
@@ -44,7 +44,7 @@ class Home extends Component {
                 </a>
                 {' '}to continue.
               </h5>
-              <App />
+              <Splash />
             </div>
           )
         }
