@@ -5,8 +5,8 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: 'rentplace.auth0.com',
         clientID: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
-        redirectUri: 'http://localhost:3000/signup',
-        audience: 'http://localhost:3000/api/users',
+        redirectUri: 'http://localhost:3000/callback',
+        audience: 'https://rentplace.auth0.com/userinfo',
         responseType: 'token id_token',
         scope: "openid profile view:properites delete:property edit:servicereq edit:property create:property delete:servicereq create:servicereq update:users delete:users read:users"
     });
@@ -19,9 +19,9 @@ export default class Auth {
         this.auth0.parseHash((err, authResult) => {
         if (authResult && authResult.accessToken && authResult.idToken) {
             this.setSession(authResult);
-            history.replace('/signup');
+            history.replace('/home');
         } else if (err) {
-            history.replace('/');
+            history.replace('/home');
             console.log(err);
         }
         });
