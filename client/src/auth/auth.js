@@ -6,9 +6,9 @@ export default class Auth {
         domain: 'rentplace.auth0.com',
         clientID: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
         redirectUri: 'http://localhost:3000/signup',
-        audience: 'https://rentplace.auth0.com/userinfo',
+        audience: 'http://localhost:3000/api/users',
         responseType: 'token id_token',
-        scope: 'openid'
+        scope: "openid profile view:properites delete:property edit:servicereq edit:property create:property delete:servicereq create:servicereq update:users delete:users read:users"
     });
 
     login() {

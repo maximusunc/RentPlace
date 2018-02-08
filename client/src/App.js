@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Splash from "./pages/home";
 import Signin from "./pages/signin";
 import NewAccount from "./pages/newAccount";
@@ -18,7 +17,6 @@ const handleAuthentication = (nextState, replace) => {
 };
 
 const App = () =>
-  <MuiThemeProvider>
     <Router>
       <div>
         <Header />
@@ -33,7 +31,6 @@ const App = () =>
         </Switch>
         <Footer />
       </div>
-    </Router>
-  </MuiThemeProvider>;
+    </Router>;
 
 export default App;

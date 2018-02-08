@@ -97,6 +97,12 @@ class NewAccCard extends Component {
                                     <label htmlFor="zip">Zip Code</label>
                                 </div>
                             </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input name="email" value={this.state.email} onChange={this.handleInputChange} id="email" type="text" className="validate" />
+                                    <label htmlFor="email">Email</label>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     
