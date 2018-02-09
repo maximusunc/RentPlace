@@ -4,6 +4,7 @@ body {
   font-color: #99cfe0;
 }
 
+
 h4 {
   color: white;
   font-family: tahoma;
@@ -38,33 +39,46 @@ li {
   font-size: 18px;
 }
 
+.tabs .indicator {
+    background-color: silver;
+}
+
 .row {
   margin-top: 20px;
 }
 
 #tabs-swipe-demo {
   background-color: #227c7c;
-  float: center;
 }
 
-#test-swipe-1 {
+#listings {
   color: white;
   background: #227c7c;
   height: 500px;
 }
 
-#test-swipe-2 {
+#rentinfo {
   color: white;
   background: #227c7c;
+  height: 500px;
+}
+
+#contact {
+  color: white;
+  background: #227c7c;
+  height: 500px;
+}
+
+#service {
+  color: white;
+  background: #227c7c;
+  height: 500px;
 }
 
 .col.s12.m12 {
   margin-top: 50px;
 }
 
-.col.s12 {
-  background: #227c7c;
-}
 .titleimg {
   display: block;
   margin-left: auto;
@@ -75,6 +89,33 @@ li {
   background: #227c7c;
   text-align: center;
   size: 100%;
+}
+
+.form-control {
+  width: 500px;
+  height: 180px;
+}
+
+.file-path-wrapper {
+  width: 300px;
+}
+
+#send {
+  background-color: #2af42a;
+  right:50px;
+}
+
+.btn-waves-effect.waves-teal-light.btn-large {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .page-footer {

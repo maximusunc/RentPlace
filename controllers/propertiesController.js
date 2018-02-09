@@ -10,9 +10,28 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  // find by id
   findById: function(req, res) {
     db.Property
       .findById(req.params.id)
+      .populate('_landlord')
+      .populate('_tenant')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  // find by landlord
+  findByLandlord: function (req, res) {
+    db.Property
+      .find({ '_landlord': req.params.id })
+      .populate('_landlord')
+      .populate('_tenant')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  // find by tenant
+  findByTenant: function (req, res) {
+    db.Property
+      .find({ '_tenant': req.params.id })
       .populate('_landlord')
       .populate('_tenant')
       .then(dbModel => res.json(dbModel))

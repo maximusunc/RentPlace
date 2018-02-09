@@ -12,4 +12,16 @@ router.route("/:id")
   .put(serviceController.update)
   .delete(serviceController.remove);
 
+  // Matches with "/api/servicereqs/findbylandlord/:id"
+router.route("/findbylandlord/:id")
+  .get(serviceController.findByLandlord);
+
+// Matches with "/api/servicereqs/findbytenant/:id"
+router.route("/findbylandlord/:id")
+  .get(serviceController.findByTenant);
+
+// Matches with "/api/servicereqs/findbypropid/:id"
+router.route("/findbylandlord/:id")
+  .get(serviceController.findByPropId)
+
 module.exports = router;
