@@ -2,6 +2,10 @@ import auth0 from 'auth0-js';
 import history from "../history";
 
 export default class Auth {
+    constructor() {
+        this.getProfile = this.getProfile.bind(this);
+    };
+
     auth0 = new auth0.WebAuth({
         domain: 'rentplace.auth0.com',
         clientID: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
@@ -11,8 +15,18 @@ export default class Auth {
         scope: "openid profile view:properites delete:property edit:servicereq edit:property create:property delete:servicereq create:servicereq update:users delete:users read:users"
     });
 
+    userProfile;
+
     login() {
         this.auth0.authorize();
+    };
+
+    getAccessToken() {
+        const accessToken = localStorage.getItem('access_token');
+        if (!accessToken) {
+          throw new Error('No Access Token found');
+        }
+        return accessToken;
     };
 
     handleAuthentication() {
@@ -51,5 +65,15 @@ export default class Auth {
         // access token's expiry time
         let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
         return new Date().getTime() < expiresAt;
+    };
+
+    getProfile(cb) {
+        let accessToken = this.getAccessToken();
+        this.auth0.client.userInfo(accessToken, (err, profile) => {
+          if (profile) {
+            this.userProfile = profile;
+          }
+          cb(err, profile);
+        });
     };
 }

@@ -8,9 +8,10 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findByEmail: function(req, res) {
+    console.log(req.params.email);
     db.User
-      .findById(req.params.id)
+      .find({email: req.params.email})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
