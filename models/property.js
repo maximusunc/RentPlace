@@ -6,7 +6,7 @@ const propertySchema = new Schema({
     _landlord: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     _tenant: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     address1: { type: String, required: true },
-    address2: { type: String, required: true },
+    address2: { type: String },
     city: { type: String, required: true },
     state: { type: String, required: true },
     zip: {
