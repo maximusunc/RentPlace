@@ -5,17 +5,14 @@ import { Link } from "react-router-dom";
 const Property = (props) =>
     <Container>
         <ul>
-            <li>_landlord= {props._landlord}</li>
-            <li>_tenant= {props._tenant}</li>
-            <li>address1 = {props.address1}</li>
-            <li>address2= {props.address2}</li>
-            <li>city= {props.city}</li>
-            <li>state= {props.state}</li>
-            <li>zip= {props.zip}</li>
-            <li>leaseStart= {props.leaseStart}</li>
-            <li>leaseEnd= {props.leaseEnd}</li>
-            <li>rentAmt= {props.rentAmt}</li>
-            <li>id= {props.id}</li> 
+            <li>Address 1: {props.address1}</li>
+            <li>Address 2: {props.address2}</li>
+            <li>City: {props.city}</li>
+            <li>State: {props.state}</li>
+            <li>Zip: {props.zip}</li>
+            <li>Lease Start Date: {props.leaseStart}</li>
+            <li>Lease End Date:  {props.leaseEnd}</li>
+            <li>Monthly Rent: ${props.rentAmt}</li>
         </ul>
     </Container>;
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "../components/container";
 import API from "../utils/API";
+import PropertyList from "../components/propertyList";
 import Property from "../components/property";
 
 
@@ -18,39 +19,21 @@ class Myproperties extends Component {
     getproperties = () => {
         API.getPropertyByLandlord("5a7f0a42d2f11c1a429ce547")
             .then(res => 
-              {
-                  console.log("res data", res.data);
-                    this.setState({
-                    properties: res.data
-                    // _landlord: res.data._landlord,
-                    // _tenant: res.data._tenant,
-                    // address1: res.data.address1,
-                    // address2: res.data.address2,
-                    // city: res.data.city,
-                    // state: res.data.state,
-                    // zip: res.data.zip,
-                    // leaseStart: res.data.leaseStart,
-                    // leaseEnd: res.data.leaseEnd,
-                    // rentAmt: res.data.rentAmt,
-                    // id: res.data.id 
-                })}
-            ).
-            then(console.log("this state", this.state))
+            {
+                this.setState({
+                properties: res.data
+            })})
             .catch(err => console.log(err));
     };
-
-
-
 
     render() {
         return (
             <Container>
                     <div>
-                        { 
-                            this.state.properties.map( property => (
-                            <Property
-                                _landlord={property._landlord}
-                                _tenant={property._tenant}
+                        <PropertyList>
+                            {this.state.properties.map(property => {
+                            return (
+                            <Property           
                                 address1={property.address1}
                                 address2={property.address2}
                                 city={property.city}
@@ -61,7 +44,9 @@ class Myproperties extends Component {
                                 rentAmt={property.rentAmt}
                                 id={property.id}
                             />
-                        ))}
+                            );
+                        })}
+                        </PropertyList>
                     </div>
             </Container>
         );

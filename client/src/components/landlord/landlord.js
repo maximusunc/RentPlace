@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 const Landlord = (props) =>
 
     <Container>
-        <h1>Hello, {props.name}</h1>
-        <p>I am a landlord</p>
-
         <ul>
             <li>Email: {props.email}</li>
             <li>Address1: {props.address1}</li>
