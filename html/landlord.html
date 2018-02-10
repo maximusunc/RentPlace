@@ -27,8 +27,9 @@
           
     <div id="swipeable" class="section scrollspy">
       <ul id="tabs-swipe-demo" class="tabs">
-        <li class="tab col s6"><a href="#listings">Listings</a></li>
-        <li class="tab col s6"><a href="#contact">Contact Tenant</a></li>
+        <li class="tab col s4"><a href="#listings">Listings</a></li>
+        <li class="tab col s4"><a href="#contact">Contact Tenant</a></li>
+        <li class="tab col s4"><a href="#service">Tenant Service Requests</a></li>
       </ul>
 
 
@@ -57,31 +58,35 @@
         <li>Monthly Rent Amount:</li>
         </ul>
   </div>
-
+  </div>
 
   <div id="contact" class="col s12" data-mcs-theme="3d-thick">
   <br><br>
-        <i class="material-icons medium">contact_mail</i><h5>Send a message</h5>
-<form role="form" method="post" id="reused_form" enctype="multipart/form-data">
-                <textarea class="form-control hoverable"
-                id="message" placeholder="Start message here"></textarea>
+        <i class="material-icons medium">contact_mail</i><h5>Send a Message</h5><br>
+        <div class="col s6 offset-s3">
+Here you can directly contact your tenants with any general questions or comments.
+</div>
 
-<div class="file-field input-field">
-      <button class="btn-waves-effect waves-teal-light btn-large" id="attach">
-        <span>Attachment</span>
-        </button>
-        <input type="file" multiple>
-        <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea hoverable"></textarea>
+        </div>
       </div>
-  <button type="submit" class="btn-waves-effect waves-teal-light btn-large" id="send">Send message</button>
-</form>
+    </form>
+          <button type="submit" class="btn-waves-effect waves-teal-light btn-large" id="send">Send Message</button>
 </div>
-</form>
 </div>
 
+<div id="service" class="col s12" data-mcs-theme="3d-thick">
+  <br><br>
+        <i class="material-icons medium">build</i><h5>Tenant Service Requests</h5><br>
+Open Service Requests:
 
-
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -108,7 +113,7 @@
   <script>
     (function($){
         $(window).on("load",function(){
-            $("#listings").mCustomScrollbar();
+            $("#listings,#contact").mCustomScrollbar();
         });
     })(jQuery);
 </script>
