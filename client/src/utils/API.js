@@ -4,8 +4,8 @@ export default {
   createUser: function(newUser) {
     return axios.post("/api/users", newUser);
   },
-  getUser: function(id) {
-    return axios.get("/api/users/" + id);
+  getUser: function(email) {
+    return axios.get("/api/users/" + email);
   },
   createServiceReq: function(servicereq) {
     return axios.post("/api/servicereqs", servicereq);

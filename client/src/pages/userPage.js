@@ -17,12 +17,27 @@ class UserPage extends Component {
         phone: ""
     };
 
-    componentDidMount() {
-        this.getUser();
-    }
+    componentWillMount() {
+        this.setState({ profile: {} });
+        const { userProfile, getProfile } = this.props.auth;
+        if (!userProfile) {
+            getProfile((err, profile) => {
+                this.setState({ profile: profile });
+                this.getUser();
+            });
+        } else {
+            this.setState({ profile: userProfile });
+        };
+    };
+
+    // componentDidMount() {
+    //     this.getUser();
+    // }
 
     getUser = () => {
-        API.getUser("5a7b235ccad0e56dc4fd037d")
+        const { profile } = this.state;
+        console.log(profile.name);
+        API.getUser("max@max.com")
             .then(res => this.setState({
                 name: res.data.name,
                 role: res.data.role,
