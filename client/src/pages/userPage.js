@@ -30,14 +30,10 @@ class UserPage extends Component {
         };
     };
 
-    // componentDidMount() {
-    //     this.getUser();
-    // }
-
     getUser = () => {
         const { profile } = this.state;
         console.log(profile.name);
-        API.getUser("max@max.com")
+        API.getUser(profile.name)
             .then(res => this.setState({
                 name: res.data.name,
                 role: res.data.role,
@@ -58,7 +54,7 @@ class UserPage extends Component {
                 {this.state.role === "Landlord" ? (
                     <div>
                         <Landlord 
-                            name= {this.state.name}
+                            name={this.state.name}
                             email={this.state.email}
                             address1={this.state.address1}
                             address2={this.state.address2}
