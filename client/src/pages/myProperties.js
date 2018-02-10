@@ -18,23 +18,29 @@ class Myproperties extends Component {
     getproperties = () => {
         API.getPropertyByLandlord("5a7f0a42d2f11c1a429ce547")
             .then(res => 
-                this.setState({
-                    // properties: res.data
-                    _landlord: res.data._landlord,
-                    _tenant: res.data._tenant,
-                    address1: res.data.address1,
-                    address2: res.data.address2,
-                    city: res.data.city,
-                    state: res.data.state,
-                    zip: res.data.zip,
-                    leaseStart: res.data.leaseStart,
-                    leaseEnd: res.data.leaseEnd,
-                    rentAmt: res.data.rentAmt,
-                    id: res.data.id 
-                })
-            )
+              {
+                  console.log("res data", res.data);
+                    this.setState({
+                    properties: res.data
+                    // _landlord: res.data._landlord,
+                    // _tenant: res.data._tenant,
+                    // address1: res.data.address1,
+                    // address2: res.data.address2,
+                    // city: res.data.city,
+                    // state: res.data.state,
+                    // zip: res.data.zip,
+                    // leaseStart: res.data.leaseStart,
+                    // leaseEnd: res.data.leaseEnd,
+                    // rentAmt: res.data.rentAmt,
+                    // id: res.data.id 
+                })}
+            ).
+            then(console.log("this state", this.state))
             .catch(err => console.log(err));
     };
+
+
+
 
     render() {
         return (
