@@ -7,6 +7,9 @@ export default {
   getUser: function(email) {
     return axios.get("/api/users/" + email);
   },
+  getPropertyByLandlord: function (id) {
+    return axios.get("/api/properties/findbylandlord/" + id);
+  },
   createServiceReq: function(servicereq) {
     return axios.post("/api/servicereqs", servicereq);
   },

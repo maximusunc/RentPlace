@@ -9,6 +9,7 @@ import NewAccount from "./pages/newAccount";
 import UserPage from "./pages/userPage";
 import ServiceReq from "./pages/servicereq";
 import Properties from "./pages/properties";
+import Myproperties from "./pages/myProperties";
 import NoMatch from "./pages/noMatch";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -38,6 +39,7 @@ const Routes = () => (
             <Route exact path="/user" render={(props) => <UserPage auth={auth} {...props} />} />
             <Route exact path="/servicereq" render={(props) => <ServiceReq auth={auth} {...props} />} />
             <Route exact path="/properties" render={(props) => <Properties auth={auth} {...props} />} />
+            <Route exact path="/myproperties" render={(props) => <Myproperties auth={auth} {...props} />} />
             <Route render={(props) => <NoMatch auth={auth} {...props} />} />
         </Switch>
         <Footer />

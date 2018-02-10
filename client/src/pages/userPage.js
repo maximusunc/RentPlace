@@ -14,7 +14,8 @@ class UserPage extends Component {
         city: "",
         state: "",
         zip: "",
-        phone: ""
+        phone: "",
+        id:""
     };
 
     componentWillMount() {
@@ -30,10 +31,13 @@ class UserPage extends Component {
         };
     };
 
+    // componentDidMount() {
+    //     this.getUser();
+    // }
+
     getUser = () => {
         const { profile } = this.state;
-        console.log(profile.name);
-        API.getUser(profile.name)
+        API.getUser("matt@matt.com")
             .then(res => this.setState({
                 name: res.data.name,
                 role: res.data.role,
@@ -43,7 +47,8 @@ class UserPage extends Component {
                 city: res.data.city,
                 state: res.data.state,
                 zip: res.data.zip,
-                phone: res.data.phone
+                phone: res.data.phone,
+                id: res.data._id
             }))
             .catch(err => console.log(err));
     };
@@ -54,7 +59,7 @@ class UserPage extends Component {
                 {this.state.role === "Landlord" ? (
                     <div>
                         <Landlord 
-                            name={this.state.name}
+                            name= {this.state.name}
                             email={this.state.email}
                             address1={this.state.address1}
                             address2={this.state.address2}
@@ -62,6 +67,7 @@ class UserPage extends Component {
                             state={this.state.state}
                             zip={this.state.zip}
                             phone={this.state.phone}
+                            id={this.state.id}
                         />
                     </div>
                 ) : (
@@ -75,6 +81,7 @@ class UserPage extends Component {
                             state={this.state.state}
                             zip={this.state.zip}
                             phone={this.state.phone}
+                            id={this.state.id}
                         />
                     </div>
                 )}
