@@ -28,7 +28,9 @@ class Home extends Component {
                 Log Out
               </a>.
             </h5>
-            <UserPage />
+            <UserPage 
+              auth={this.props.auth}
+            />
           </div>
         }
         {

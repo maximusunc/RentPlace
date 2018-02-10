@@ -54,16 +54,6 @@ const NewAccCard = props =>
                             <label htmlFor="zip">Zip Code</label>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <input name="email" value={props.email || ""} onChange={props.onChange} id="email" type="text" className="validate" />
-                            <label htmlFor="email">Email</label>
-                        </div>
-                        <div className="input-field col s6">
-                            <input name="password" value={props.password || ""} onChange={props.onChange} id="password" type="password" className="validate" />
-                            <label htmlFor="password">Password</label>
-                        </div>
-                    </div>
                 </form>
             </div>
             
