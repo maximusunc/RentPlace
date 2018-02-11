@@ -3,8 +3,8 @@ import Container from "../container";
 import { Link } from "react-router-dom";
 
 const Landlord = (props) =>
-
     <Container>
+        <h3>Welcome, {props.name}</h3>
         <ul>
             <li>Email: {props.email}</li>
             <li>Address1: {props.address1}</li>
