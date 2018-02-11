@@ -29,7 +29,7 @@
       <ul id="tabs-swipe-demo" class="tabs">
         <li class="tab col s4"><a href="#rentinfo">Rental Information</a></li>
         <li class="tab col s4"><a href="#contact">Contact Landlord</a></li>
-        <li class="tab col s4"><a href="#service">Service Request</a></li>
+        <li class="tab col s4"><a href="#service">Service Requests</a></li>
       </ul>
 
 
@@ -60,29 +60,45 @@
 
   <div id="contact" class="col s12" data-mcs-theme="3d-thick">
   <br><br>
-        <i class="material-icons medium">contact_mail</i><h5>Send a message</h5>
-<form role="form" method="post" id="reused_form" enctype="multipart/form-data">
-                <textarea class="form-control hoverable"
-                id="message" placeholder="Start message here"></textarea>
+        <i class="material-icons medium">contact_mail</i><h5>Send a Message</h5><br>
 
-<div class="file-field input-field">
-      <button class="btn-waves-effect waves-teal-light btn-large" id="attach">
-        <span>Attachment</span>
-        </button>
-        <input type="file" multiple>
-        <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        <div class="col s6 offset-s3">
+Here you can directly contact your landlord with any general non-service request inquiries or comments. Enter your message below:
+</div>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea hoverable"></textarea>
+        </div>
       </div>
-  <button type="submit" class="btn-waves-effect waves-teal-light btn-large" id="send">Send message</button>
-</form>
+    </form>
+          <button type="submit" class="btn-waves-effect waves-teal-light btn-large" id="send">Send Message</button>
+
 </div>
-</form>
 </div>
+
 <div id="service" class="col s12" data-mcs-theme="3d-thick">
   <br><br>
-        <i class="material-icons medium">build</i><h5>Service Request</h5><br>
-With this tool you can select which type of service (painting, cleaning, carpet cleaning, etc) you need and a request will be sent directly to one of your landlord's vendors. Please submit more than one request seperately.
+        <i class="material-icons medium">build</i><h5>Service Requests</h5><br>
 
+<div class="col s6 offset-s3">
+With this tool you can send a service request which will be directly sent to your landlord and a vendor. Please submit seperate submissions for more than one request. Enter request below:
+</div>
+
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea hoverable"></textarea>
+        </div>
+      </div>
+    </form>
+          <button type="submit" class="btn-waves-effect waves-teal-light btn-large" id="send">Send Request</button>
+
+        
 </div>
 </div>
 </div>
@@ -107,14 +123,15 @@ With this tool you can select which type of service (painting, cleaning, carpet 
             <h5>© 2018 MaMaJ Productions</h5>
           </div>
         </footer>
-  <script src="js/formhandle.js"></script>
+
   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script>
     (function($){
         $(window).on("load",function(){
-            $("#rentinfo").mCustomScrollbar();
+            $("#rentinfo,#contact,#service").mCustomScrollbar();
         });
     })(jQuery);
 </script>
+
 </body>
 </html>

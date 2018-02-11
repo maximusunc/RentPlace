@@ -91,18 +91,16 @@ li {
   size: 100%;
 }
 
-.form-control {
+#textarea1 {
+  height: 200px;
   width: 500px;
-  height: 180px;
-}
-
-.file-path-wrapper {
-  width: 300px;
+ background-color: #00897b;
+ color: #99cfe0;
+ font-weight: 700;
 }
 
 #send {
   background-color: #2af42a;
-  right:50px;
 }
 
 .btn-waves-effect.waves-teal-light.btn-large {
