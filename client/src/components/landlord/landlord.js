@@ -3,10 +3,8 @@ import Container from "../container";
 import { Link } from "react-router-dom";
 
 const Landlord = (props) =>
-    <Container>
-        <h1>Hello, {props.name}</h1>
-        <p>I am a landlord</p>
 
+    <Container>
         <ul>
             <li>Email: {props.email}</li>
             <li>Address1: {props.address1}</li>
@@ -15,14 +13,16 @@ const Landlord = (props) =>
             <li>State: {props.state}</li>
             <li>Zip: {props.zip}</li>
             <li>Phone #: {props.phone}</li>
+            <li>ID: {props.id}</li>
         </ul>
 
         <h3>Properties:</h3>
+        <Link to={`/properties/`}>View Properties</Link>
         <ul>
             
         </ul>
 
-        <Link to="/servicereq">View Service Reqeusts</Link>
+        <Link to="/servicereq/">View Service Reqeusts</Link>
     </Container>;
 
 export default Landlord;

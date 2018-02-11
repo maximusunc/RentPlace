@@ -31,7 +31,6 @@ module.exports = {
   findByLandlord: function (req, res) {
     db.ServiceReq
       .find({ '_landlord': req.params.id })
-      .populate('_landlord')
       .populate('_tenant')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -41,7 +40,6 @@ module.exports = {
     db.ServiceReq
       .find({ '_tenant': req.params.id })
       .populate('_landlord')
-      .populate('_tenant')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
