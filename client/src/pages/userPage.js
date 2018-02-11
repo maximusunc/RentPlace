@@ -17,6 +17,10 @@ class UserPage extends Component {
         phone: ""
     };
 
+    logOut = () => {
+        this.props.auth.logout();
+    };
+
     componentWillMount() {
         this.setState({ profile: {} });
         const { userProfile, getProfile } = this.props.auth;
@@ -32,7 +36,6 @@ class UserPage extends Component {
 
     getUser = () => {
         const { profile } = this.state;
-        console.log(profile.name);
         API.getUser(profile.name)
             .then(res => this.setState({
                 name: res.data.name,
@@ -51,6 +54,7 @@ class UserPage extends Component {
     render() {
         return (
             <Container>
+                <button className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">lock</i>Log Off</button>
                 {this.state.role === "Landlord" ? (
                     <div>
                         <Landlord 
