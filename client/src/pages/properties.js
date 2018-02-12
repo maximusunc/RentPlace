@@ -22,6 +22,7 @@ class Properties extends Component {
         const { history } = this.props;
         event.preventDefault();
         API.createProperty({
+            _tenant: this.props.location.id.id,
             address1: this.state.address1,
             address2: this.state.address2,
             city: this.state.city,
@@ -31,8 +32,10 @@ class Properties extends Component {
             leaseEnd: this.state.leaseEnd,
             rentAmt: this.state.rentAmt
         })
-            .then(alert("Property added."))
-            .then(res => history.push("/user"))
+            .then(res => {
+                alert("Property added.");
+                history.push("/home");
+            })
             .catch(err => alert("Something went wrong. Please try again."));
     };
 
