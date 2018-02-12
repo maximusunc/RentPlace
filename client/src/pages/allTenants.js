@@ -45,6 +45,7 @@ class AllTenants extends Component {
                                     name={tenant.name}
                                     email={tenant.email}
                                     handleClick={() => this.handleTenantSelect(tenant._id)}
+                                    key={tenant._id}
                                 />
                             ))}
                         </TenantList>
