@@ -17,7 +17,7 @@ class Myproperties extends Component {
     }
 
     getproperties = () => {
-        API.getPropertyByLandlord("5a7f0a42d2f11c1a429ce547")
+        API.getPropertyByLandlord(this.props.id)
             .then(res => 
             {
                 this.setState({

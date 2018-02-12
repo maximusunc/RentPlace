@@ -17,7 +17,7 @@ const Landlord = (props) =>
         </ul>
 
         <h3>Properties:</h3>
-        <Link to={`/properties/`}>View Properties</Link>
+        <Link to={`/myproperties/`}>View Properties</Link>
         <ul>
             
         </ul>

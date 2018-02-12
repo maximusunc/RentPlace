@@ -6,6 +6,10 @@ router.route("/")
   .get(usersController.findAll)
   .post(usersController.create);
 
+  // Matches with "/api/users/allTenants"
+router.route("/findAllTenants")
+  .get(usersController.findAllTenants)
+
 // Matches with "/api/users/:id"
 router.route("/:email")
   .get(usersController.findByEmail)
