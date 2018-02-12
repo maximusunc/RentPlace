@@ -18,6 +18,9 @@ export default {
   },
   createProperty: function(property) {
     return axios.post("/api/properties", property);
+  },
+  userSignUp: function(auth0data) {
+    return axios.post("/auth/signup", auth0data);
   }
   
 };

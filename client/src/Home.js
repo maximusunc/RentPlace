@@ -19,15 +19,6 @@ class Home extends Component {
         {
           isAuthenticated() &&
           <div className="container column">
-            <h5>
-              You are logged in!{' '}
-              <a
-                style={{ cursor: 'pointer' }}
-                onClick={this.logout}
-              >
-                Log Out
-              </a>.
-            </h5>
             <UserPage 
               auth={this.props.auth}
             />
@@ -36,17 +27,9 @@ class Home extends Component {
         {
           !isAuthenticated() && (
             <div className="container column">
-              <h5>
-                You are not logged in! Please{' '}
-                <a
-                  style={{ cursor: 'pointer' }}
-                  onClick={this.login}
-                >
-                  Log In
-                </a>
-                {' '}to continue.
-              </h5>
-              <Splash />
+              <Splash 
+                auth={this.props.auth}
+              />
             </div>
           )
         }

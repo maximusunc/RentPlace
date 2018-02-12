@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 const Tenant = (props) =>
     <Container>
-        <h1>Welcome, {props.name}</h1>
-        <p>You are a tenant</p>
-
+        <h3>Welcome, {props.name}</h3>
         <ul>
             <li>Email: {props.email}</li>
             <li>Address1: {props.address1}</li>
@@ -15,6 +13,7 @@ const Tenant = (props) =>
             <li>State: {props.state}</li>
             <li>Zip: {props.zip}</li>
             <li>Phone #: {props.phone}</li>
+            <li>ID: {props.id}</li>
         </ul>
 
         <h3>Property Info:</h3>
