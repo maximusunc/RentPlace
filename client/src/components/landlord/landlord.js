@@ -35,7 +35,7 @@ class Landlord extends Component {
                 <ul>
                 {this.state.properties.length ? (
                     this.state.properties.map(property => (
-                        <li key={property._id}><Link to={{pathname: "/allTenants", id: property.id }}>{property.address1}</Link></li>
+                        <li key={property._id}><Link to={{pathname: "/allTenants", id: property._id }}>{property.address1}</Link></li>
                     ))
                 ) : (
                     <p>You don't have any properties yet.</p>
