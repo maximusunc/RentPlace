@@ -31,13 +31,14 @@ module.exports = {
   // find by tenant
   findByTenant: function (req, res) {
     db.Property
-      .find({ '_tenant': req.params.id })
+      .findOne({ '_tenant': req.params.id })
       .populate('_landlord')
       .populate('_tenant')
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body);
     db.Property
       .create(req.body)
       .then(dbModel => res.json(dbModel))

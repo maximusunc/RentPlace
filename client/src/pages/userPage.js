@@ -35,10 +35,6 @@ class UserPage extends Component {
         };
     };
 
-    // componentDidMount() {
-    //     this.getUser();
-    // }
-
     getUser = () => {
         const { profile } = this.state;
         API.getUser(profile.name)
