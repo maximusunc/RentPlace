@@ -9,10 +9,10 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: 'rentplace.auth0.com',
         clientID: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
-        redirectUri: 'http://localhost:3000/callback',
+        redirectUri: 'https://rent-place.herokuapp.com/callback',
         audience: 'https://rentplace.auth0.com/userinfo',
         responseType: 'token id_token',
-        scope: "openid profile view:properites delete:property edit:servicereq edit:property create:property delete:servicereq create:servicereq update:users delete:users read:users"
+        scope: "openid profile"
     });
 
     userProfile;
