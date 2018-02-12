@@ -7,6 +7,12 @@ export default {
   getUser: function(email) {
     return axios.get("/api/users/" + email);
   },
+  getAllTenants: function () {
+    return axios.get("/api/users/findAllTenants");
+  },
+  getAllProperties: function () {
+    return axios.get("/api/properties/");
+  },
   getPropertyByLandlord: function (id) {
     return axios.get("/api/properties/findbylandlord/" + id);
   },

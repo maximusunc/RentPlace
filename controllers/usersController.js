@@ -1,10 +1,16 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the usersController
 module.exports = {
   findAll: function(req, res) {
     db.User
       .find({})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findAllTenants: function (req, res) {
+    db.User
+      .find({role: "Tenant"})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
