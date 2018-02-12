@@ -38,7 +38,6 @@ class Myservicereq extends Component {
                                 notes={servicereq.notes}
                                 completed={servicereq.completed}
                                 date={servicereq.date}
-                              
                             />
                             );
                         })}
