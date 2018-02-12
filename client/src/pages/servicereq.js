@@ -17,12 +17,16 @@ class ServiceReq extends Component {
         const { history } = this.props;
         event.preventDefault();
         API.createServiceReq({
+            _tenant: this.props.location.id.tenant,
+            _property: this.props.location.id.property,
             subject: this.state.subject,
             description: this.state.description,
             notes: this.state.notes
         })
-            .then(alert("Service Request Successful. Your landlord will be notified."))
-            .then(res => history.push("/user"))
+            .then(res => {
+                alert("Service Request Successful. Your landlord will be notified.");
+                history.push("/home");
+            })
             .catch(err => alert("Something went wrong. Please try again."));
     };
 

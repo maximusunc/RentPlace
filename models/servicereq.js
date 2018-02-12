@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const serviceReqSchema = new Schema({
-    _landlord: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    _tenant: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    _property: [{ type: Schema.Types.ObjectId, ref: 'Property' }],
+    _landlord: { type: Schema.Types.ObjectId, ref: 'User' },
+    _tenant: { type: Schema.Types.ObjectId, ref: 'User' },
+    _property: { type: Schema.Types.ObjectId, ref: 'Property' },
     subject: { type: String, required: true },
     description: { type: String, required: true },
     notes: String,

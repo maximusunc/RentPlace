@@ -12,7 +12,8 @@ class Tenant extends Component {
         zip: "",
         leaseStart: "",
         leaseEnd: "",
-        rentAmt: ""
+        rentAmt: "",
+        id: ""
     };
 
     componentDidUpdate() {
@@ -26,7 +27,8 @@ class Tenant extends Component {
                 zip: res.data.zip,
                 leaseStart: res.data.leaseStart,
                 leaseEnd: res.data.leaseEnd,
-                rentAmt: res.data.rentAmt
+                rentAmt: res.data.rentAmt,
+                id: res.data._id
                 })
             })
             .catch(err => console.log(err));
@@ -62,12 +64,12 @@ class Tenant extends Component {
                     </ul>
                 ) : (
                     <button className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">add</i>
-                        <Link to={{pathname: "/properties", id: {id: this.props.id} }}>Add your property</Link>
+                        <Link to={{pathname: "/properties", id: this.props.id }}>Add your property</Link>
                     </button>
                 )}
                 
                 <button className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">add</i>
-                    <Link to="/servicereq">Create a Service Reqeust</Link>
+                    <Link to={{pathname: "/servicereq", id: {property: this.state.id, tenant: this.props.id} }}>Create a Service Reqeust</Link>
                 </button>
                 
             </Container>

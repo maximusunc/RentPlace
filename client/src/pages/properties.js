@@ -22,7 +22,7 @@ class Properties extends Component {
         const { history } = this.props;
         event.preventDefault();
         API.createProperty({
-            _tenant: this.props.location.id.id,
+            _tenant: this.props.location.id,
             address1: this.state.address1,
             address2: this.state.address2,
             city: this.state.city,
