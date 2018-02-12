@@ -7,14 +7,23 @@ export default {
   getUser: function(email) {
     return axios.get("/api/users/" + email);
   },
+  getAllTenants: function () {
+    return axios.get("/api/users/findAllTenants");
+  },
+  getAllProperties: function () {
+    return axios.get("/api/properties/");
+  },
   getPropertyByLandlord: function (id) {
     return axios.get("/api/properties/findbylandlord/" + id);
+  },
+  getPropertyByTenant: function (id) {
+    return axios.get("/api/properties/findbytenant/" + id);
   },
   getServiceReqByLandlord: function (id) {
     return axios.get("/api/servicereqs/findbylandlord/" + id);
   },
-  getPropertyByTenant: function(id) {
-    return axios.get("/api/properties/findbytenant/" + id);
+  getServiceReqByTenant: function (id) {
+    return axios.get("/api/servicereqs/findbytenant/" + id);
   },
   createServiceReq: function(servicereq) {
     return axios.post("/api/servicereqs", servicereq);
