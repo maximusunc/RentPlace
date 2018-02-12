@@ -4,10 +4,10 @@
   "private": true,
   "proxy": {
     "/api":{
-      "target": "http://localhost:3001/"
+      "target": "http://rent-place.herokuapp.com/"
     },
     "/auth":{
-      "target": "http://localhost:3001/"
+      "target": "http://rent-place.herokuapp.com/"
     }
   },
   "dependencies": {
