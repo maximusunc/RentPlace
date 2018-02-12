@@ -46,7 +46,6 @@ class Tenant extends Component {
                     <li>State: {this.props.state}</li>
                     <li>Zip: {this.props.zip}</li>
                     <li>Phone #: {this.props.phone}</li>
-                    <li>ID: {this.props.id}</li>
                 </ul>
         
                 <h3>Property Info:</h3>
@@ -63,12 +62,10 @@ class Tenant extends Component {
                         <li>Rent Amount: {this.state.rentAmt}</li>
                     </ul>
                 ) : (
-                    <button className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">add</i>
-                        <Link to={{pathname: "/properties", id: this.props.id }}>Add your property</Link>
-                    </button>
+                    <p>Your landlord needs to add you to the property</p>
                 )}
                 
-                <button className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">add</i>
+                <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
                     <Link to={{pathname: "/servicereq", id: {property: this.state.id, tenant: this.props.id} }}>Create a Service Reqeust</Link>
                 </button>
                 
