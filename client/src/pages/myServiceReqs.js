@@ -7,22 +7,29 @@ import ServiceReq from "../components/servicereq";
 class Myservicereq extends Component {
 
     componentDidMount() {
-        this.getservicereq();
-        console.log(this.state)
+        const properties = this.props.location.id;
+        this.getservicereq(properties);
     };
 
     state = {
         servicereq: []
     };
 
-    getservicereq = () => {
-        API.getServiceReqByLandlord("5a79f7ccda985e42f7aa53b2")
+    getservicereq = (properties) => {
+        API.getServiceReqByProperty(properties)
             .then(res => 
             {
-                this.setState({
-                servicereq: res.data
-            })})
+                this.setState({ servicereq: res.data });
+            })
             .catch(err => console.log(err));
+    };
+
+    handleDelete = (id) => {
+        API.deleteServiceReq(id)
+            .then(res => {
+                window.location = "/home";
+            })
+            .catch(err => alert("Something went wrong"));
     };
 
     render() {
@@ -32,12 +39,14 @@ class Myservicereq extends Component {
                         <ServiceReqList>
                             {this.state.servicereq.map( servicereq => {
                             return (
-                            <ServiceReq         
+                            <ServiceReq   
+                                key={servicereq._id}
+                                property={servicereq._property.address1}      
                                 subject={servicereq.subject}
                                 description={servicereq.description}
                                 notes={servicereq.notes}
-                                completed={servicereq.completed}
                                 date={servicereq.date}
+                                handleDelete={() => this.handleDelete(servicereq._id)}
                             />
                             );
                         })}

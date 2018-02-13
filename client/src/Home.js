@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import Splash from './pages/home';
 import UserPage from "./pages/userPage";
 
@@ -16,6 +17,7 @@ class Home extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div>
+        <Link to="/home"><button id="home" className="waves-effect waves-teal btn-large"><i className="material-icons left">home</i>Home</button></Link>
         {
           isAuthenticated() &&
           <div className="container column">

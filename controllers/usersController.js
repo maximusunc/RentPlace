@@ -8,6 +8,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findUnassignedTenants: function(req, res) {
+    db.User
+      .find({role: "Tenant", assigned: null})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  updateTenant: function(req, res) {
+    db.User
+      .findOneAndUpdate({ _id: req.params.email }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findAllTenants: function (req, res) {
     db.User
       .find({role: "Tenant"})
@@ -23,12 +35,6 @@ module.exports = {
   create: function(req, res) {
     db.User
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  update: function(req, res) {
-    db.User
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

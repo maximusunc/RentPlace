@@ -5,13 +5,16 @@ import API from "../../utils/API";
 
 class Landlord extends Component {
     state = {
-        properties: []
+        properties: [],
+        propertyIDs: []
     };
 
     componentDidMount() {
         API.getPropertyByLandlord(this.props.id)
             .then(res => {
-                this.setState({properties: res.data});
+                const propertyIDs = [];
+                res.data.map(property => propertyIDs.push(property._id));
+                this.setState({properties: res.data, propertyIDs: propertyIDs});
             })
             .catch(err => console.log(err));
     };
@@ -34,25 +37,30 @@ class Landlord extends Component {
 
                 <ul>
                 {this.state.properties.length ? (
-                    this.state.properties.map(property => (
-                        <li key={property._id}><Link to={{pathname: "/allTenants", id: property._id }}>{property.address1}</Link></li>
-                    ))
+                    this.state.properties.map(property => {
+                        if (!property._tenant) {
+                            return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
+                        } else {
+                            return <li key={property._id}>{property.address1}:  {property._tenant.name}</li>
+                        } 
+                    })
                 ) : (
                     <p>You don't have any properties yet.</p>
                 )}
                 </ul>
         
+                <Link to={{pathname: "/properties", id: this.props.id }}>
                 <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    <Link to={{pathname: "/properties", id: this.props.id }}>Add a property</Link>
+                    Add a property
                 </button>
+                </Link>
         
-        
-                {/* <Link to={`/properties/`}>View Properties</Link>
-                <ul>
-                    
-                </ul> */}
-        
-                <Link to="/servicereq/">View Service Reqeusts</Link>
+                <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }}>
+                <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
+                    View Service Reqeusts
+                </button>
+                </Link>
+                
             </Container>
         );
     };

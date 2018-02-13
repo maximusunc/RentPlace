@@ -22,3 +22,15 @@ h3 {
     line-height: 50px;
     font-size: 40px;
 }
+
+#home {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#logout {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

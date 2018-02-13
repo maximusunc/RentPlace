@@ -27,12 +27,14 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // find by landlord
-  findByLandlord: function (req, res) {
+  // find by property
+  findByProperty: function (req, res) {
     db.ServiceReq
-      .find({ '_landlord': req.params.id })
-      .populate('_tenant')
-      .then(dbModel => res.json(dbModel))
+      .find({ '_property': {$in: req.body }})
+      .populate('_property')
+      .then(dbModel => {
+        res.json(dbModel);
+      })
       .catch(err => res.status(422).json(err));
   },
   // find by tenant
