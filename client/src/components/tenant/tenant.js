@@ -70,7 +70,7 @@ class Tenant extends Component {
                 </button>
 
                 <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    <Link to={{ pathname: "/myservicereqs", id: { property: this.state.id, tenant: this.props.id } }}>View Service Reqeusts</Link>
+                    <Link to={{ pathname: "/myservicereqs", id: { property: this.state.id } }}>View Service Reqeusts</Link>
                 </button>
                 
             </Container>
