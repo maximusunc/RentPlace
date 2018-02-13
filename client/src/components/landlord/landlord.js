@@ -5,13 +5,16 @@ import API from "../../utils/API";
 
 class Landlord extends Component {
     state = {
-        properties: []
+        properties: [],
+        propertyIDs: []
     };
 
     componentDidMount() {
         API.getPropertyByLandlord(this.props.id)
             .then(res => {
-                this.setState({properties: res.data});
+                const propertyIDs = [];
+                res.data.map(property => propertyIDs.push(property._id));
+                this.setState({properties: res.data, propertyIDs: propertyIDs});
             })
             .catch(err => console.log(err));
     };
@@ -52,7 +55,7 @@ class Landlord extends Component {
                     
                 </ul> */}
                 <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    <Link to={{pathname: "/myservicereqs", id: this.state.properties }}>View Service Reqeusts</Link>
+                    <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }}>View Service Reqeusts</Link>
                 </button>
                 
             </Container>

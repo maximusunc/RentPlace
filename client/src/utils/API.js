@@ -23,6 +23,7 @@ export default {
     return axios.get("/api/properties/findbytenant/" + id);
   },
   getServiceReqByProperty: function (properties) {
+    console.log(properties);
     return axios.get("/api/servicereqs/findbyproperty/" + properties);
   },
   getServiceReqByTenant: function (id) {

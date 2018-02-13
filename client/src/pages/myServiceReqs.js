@@ -7,8 +7,7 @@ import ServiceReq from "../components/servicereq";
 class Myservicereq extends Component {
 
     componentDidMount() {
-        const properties = [];
-        this.props.location.id.map(property => properties.push(property._id));
+        const properties = this.props.location.id;
         this.getservicereq(properties);
     };
 
@@ -17,6 +16,7 @@ class Myservicereq extends Component {
     };
 
     getservicereq = (properties) => {
+        console.log(properties);
         API.getServiceReqByProperty(properties)
             .then(res => 
             {
