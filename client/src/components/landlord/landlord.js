@@ -49,13 +49,17 @@ class Landlord extends Component {
                 )}
                 </ul>
         
+                <Link to={{pathname: "/properties", id: this.props.id }}>
                 <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    <Link to={{pathname: "/properties", id: this.props.id }}>Add a property</Link>
+                    Add a property
                 </button>
+                </Link>
         
+                <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }}>
                 <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }}>View Service Reqeusts</Link>
+                    View Service Reqeusts
                 </button>
+                </Link>
                 
             </Container>
         );

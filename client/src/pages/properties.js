@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Container from "../components/container";
 
 class Properties extends Component {
     state = {
@@ -41,61 +42,63 @@ class Properties extends Component {
 
     render() {
         return (
-            <div className="card">
-                <div className="card-title">
-                    <h4>Add Property</h4>
-                </div>
-                <div className="card-content">
-                    <div className="row">
-                        <form className="col s12">
-                            <div className="row">
-                                <div className="input-field col s12">
-                                    <input name="address1" value={this.state.address1 || ""} onChange={this.handleInputChange} id="address1" type="text" className="validate" />
-                                    <label htmlFor="address1">Address 1</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s12">
-                                    <input name="address2" value={this.state.address2 || ""} onChange={this.handleInputChange} id="address2" type="text" className="validate" />
-                                    <label htmlFor="address2">Address 2</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s4">
-                                    <input name="city" value={this.state.city || ""} onChange={this.handleInputChange} id="city" type="text" className="validate" />
-                                    <label htmlFor="city">City</label>
-                                </div>
-                                <div className="input-field col s4">
-                                    <input name="state" value={this.state.state || ""} onChange={this.handleInputChange} id="state" type="text" className="validate" />
-                                    <label htmlFor="state">State</label>
-                                </div>
-                                <div className="input-field col s4">
-                                    <input name="zip" value={this.state.zip || ""} onChange={this.handleInputChange} id="zip" type="text" className="validate" />
-                                    <label htmlFor="zip">Zip Code</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s4">
-                                    <input name="leaseStart" value={this.state.leaseStart || ""} onChange={this.handleInputChange} id="leaseStart" type="text" className="validate" />
-                                    <label htmlFor="leaseStart">Lease Start Date</label>
-                                </div>
-                                <div className="input-field col s4">
-                                    <input name="leaseEnd" value={this.state.leaseEnd || ""} onChange={this.handleInputChange} id="leaseEnd" type="text" className="validate" />
-                                    <label htmlFor="leaseEnd">Lease End Date</label>
-                                </div>
-                                <div className="input-field col s4">
-                                    <input name="rentAmt" value={this.state.rentAmt || ""} onChange={this.handleInputChange} id="rentAmt" type="text" className="validate" />
-                                    <label htmlFor="rentAmt">Rent Amount</label>
-                                </div>
-                            </div>
-                        </form>
+            <Container>
+                <div className="card">
+                    <div className="card-title">
+                        <h4>Add Property</h4>
                     </div>
-                    
+                    <div className="card-content">
+                        <div className="row">
+                            <form className="col s12">
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input name="address1" value={this.state.address1 || ""} onChange={this.handleInputChange} id="address1" type="text" className="validate" />
+                                        <label htmlFor="address1">Address 1</label>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input name="address2" value={this.state.address2 || ""} onChange={this.handleInputChange} id="address2" type="text" className="validate" />
+                                        <label htmlFor="address2">Address 2</label>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="input-field col s4">
+                                        <input name="city" value={this.state.city || ""} onChange={this.handleInputChange} id="city" type="text" className="validate" />
+                                        <label htmlFor="city">City</label>
+                                    </div>
+                                    <div className="input-field col s4">
+                                        <input name="state" value={this.state.state || ""} onChange={this.handleInputChange} id="state" type="text" className="validate" />
+                                        <label htmlFor="state">State</label>
+                                    </div>
+                                    <div className="input-field col s4">
+                                        <input name="zip" value={this.state.zip || ""} onChange={this.handleInputChange} id="zip" type="text" className="validate" />
+                                        <label htmlFor="zip">Zip Code</label>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="input-field col s4">
+                                        <input name="leaseStart" value={this.state.leaseStart || ""} onChange={this.handleInputChange} id="leaseStart" type="text" className="validate" />
+                                        <label htmlFor="leaseStart">Lease Start Date</label>
+                                    </div>
+                                    <div className="input-field col s4">
+                                        <input name="leaseEnd" value={this.state.leaseEnd || ""} onChange={this.handleInputChange} id="leaseEnd" type="text" className="validate" />
+                                        <label htmlFor="leaseEnd">Lease End Date</label>
+                                    </div>
+                                    <div className="input-field col s4">
+                                        <input name="rentAmt" value={this.state.rentAmt || ""} onChange={this.handleInputChange} id="rentAmt" type="text" className="validate" />
+                                        <label htmlFor="rentAmt">Rent Amount</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div className="card-action">
+                        <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Create</button>
+                    </div>
                 </div>
-                <div className="card-action">
-                    <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Create</button>
-                </div>
-            </div>
+            </Container>
         );
     };
 };

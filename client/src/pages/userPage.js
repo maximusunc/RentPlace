@@ -56,7 +56,7 @@ class UserPage extends Component {
     render() {
         return (
             <Container>
-                <button className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">lock</i>Log Off</button>
+                <button id="logout" className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">lock</i>Log Off</button>
                 {this.state.role === "Landlord" ? (
                     <div>
                         <Landlord 

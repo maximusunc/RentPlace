@@ -25,13 +25,14 @@ class AllTenants extends Component {
     };
 
     handleTenantSelect = (tenant) => {
+        const { history } = this.props;
         const id = this.props.location.id;
         API.assignTenant(id, {$set: {_tenant: tenant}})
             .then(res => {
                 API.updateTenant(tenant, {$set: {assigned: true}})
                     .then(res => {
                         alert("Tenant added");
-                        window.location = "/home";
+                        history.push("/home");
                     })
                     .catch(err => console.log(err));
             })
