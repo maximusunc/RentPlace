@@ -51,8 +51,10 @@ class Landlord extends Component {
                 <ul>
                     
                 </ul> */}
-        
-                <Link to="/servicereq/">View Service Reqeusts</Link>
+                <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
+                    <Link to={{pathname: "/myservicereqs", id: this.state.properties }}>View Service Reqeusts</Link>
+                </button>
+                
             </Container>
         );
     };

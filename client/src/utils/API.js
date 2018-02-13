@@ -22,8 +22,8 @@ export default {
   getPropertyByTenant: function (id) {
     return axios.get("/api/properties/findbytenant/" + id);
   },
-  getServiceReqByLandlord: function (id) {
-    return axios.get("/api/servicereqs/findbylandlord/" + id);
+  getServiceReqByProperty: function (properties) {
+    return axios.get("/api/servicereqs/findbyproperty/" + properties);
   },
   getServiceReqByTenant: function (id) {
     return axios.get("/api/servicereqs/findbytenant/" + id);
