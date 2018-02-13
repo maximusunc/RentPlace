@@ -10,6 +10,9 @@ export default {
   getAllTenants: function () {
     return axios.get("/api/users/findAllTenants");
   },
+  assignTenant: function(id, tenantUpdate) {
+    return axios.put("/api/properties/" + id, tenantUpdate);
+  },
   getAllProperties: function () {
     return axios.get("/api/properties/");
   },

@@ -8,21 +8,30 @@ import Tenant from "../components/allTenants";
 
 class AllTenants extends Component {
 
-    componentDidMount() {
-        this.gettenants();
-    };
-
     state = {
         tenants: []
-    }
+    };
 
-    gettenants = () => {
+    componentDidMount() {
+        this.getTenants();
+    };
+
+    getTenants = () => {
         API.getAllTenants()
-            .then(res => 
-            {
-                this.setState({
-                tenants: res.data
-            })})
+            .then(res => {
+                this.setState({tenants: res.data})
+            })
+            .catch(err => console.log(err));
+    };
+
+    handleTenantSelect = (tenant) => {
+        const { history } = this.props;
+        const id = this.props.location.id;
+        API.assignTenant(id, {$set: {_tenant: tenant}})
+            .then(res => {
+                alert("Tenant added");
+                history.push("/home");
+            })
             .catch(err => console.log(err));
     };
 
@@ -31,15 +40,14 @@ class AllTenants extends Component {
             <Container>
                     <div>
                         <TenantList>
-                            {this.state.tenants.map(tenant => {
-                            return (
-                            <Tenant           
-                                _id={tenant._id}
-                                name={tenant.name}
-                                email={tenant.email}
-                            />
-                            );
-                        })}
+                            {this.state.tenants.map(tenant => (
+                                <Tenant
+                                    name={tenant.name}
+                                    email={tenant.email}
+                                    handleClick={() => this.handleTenantSelect(tenant._id)}
+                                    key={tenant._id}
+                                />
+                            ))}
                         </TenantList>
                     </div>
             </Container>
