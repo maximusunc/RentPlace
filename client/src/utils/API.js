@@ -28,6 +28,9 @@ export default {
   assignTenant: function(id, tenantUpdate) {
     return axios.put("/api/properties/" + id, tenantUpdate);
   },
+  updateTenant: function(id, tenantAssigned) {
+    return axios.put("/api/users/" + id, tenantAssigned);
+  },
   getServiceReqByProperty: function (properties) {
     return axios.post("/api/servicereqs/findbyproperty", properties);
   },

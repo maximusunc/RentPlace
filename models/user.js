@@ -14,7 +14,8 @@ const userSchema = new Schema({
     state: { type: String },
     zip: { type: String,
     },
-    phone: { type: String }
+    phone: { type: String },
+    assigned: { type: Boolean }
 });
 
 const User = mongoose.model("User", userSchema);

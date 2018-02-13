@@ -20,7 +20,6 @@ class AllTenants extends Component {
         API.getUnassignedTenants()
             .then(res => {
                 this.setState({tenants: res.data})
-                console.log(this.state.tenants);
             })
             .catch(err => console.log(err));
     };
@@ -29,8 +28,12 @@ class AllTenants extends Component {
         const id = this.props.location.id;
         API.assignTenant(id, {$set: {_tenant: tenant}})
             .then(res => {
-                alert("Tenant added");
-                window.location = "/home";
+                API.updateTenant(tenant, {$set: {assigned: true}})
+                    .then(res => {
+                        alert("Tenant added");
+                        window.location = "/home";
+                    })
+                    .catch(err => console.log(err));
             })
             .catch(err => console.log(err));
     };
@@ -40,14 +43,18 @@ class AllTenants extends Component {
             <Container>
                     <div>
                         <TenantList>
-                            {this.state.tenants.map(tenant => (
-                                <Tenant
-                                    name={tenant.name}
-                                    email={tenant.email}
-                                    handleClick={() => this.handleTenantSelect(tenant._id)}
-                                    key={tenant._id}
-                                />
-                            ))}
+                            {this.state.tenants.length ? (
+                                this.state.tenants.map(tenant => (
+                                    <Tenant
+                                        name={tenant.name}
+                                        email={tenant.email}
+                                        handleClick={() => this.handleTenantSelect(tenant._id)}
+                                        key={tenant._id}
+                                    />
+                                ))
+                            ) : (
+                                <h4>All tenants have been assigned</h4>
+                            )}
                         </TenantList>
                     </div>
             </Container>
