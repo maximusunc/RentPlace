@@ -30,7 +30,7 @@ module.exports = {
   // find by property
   findByProperty: function (req, res) {
     db.ServiceReq
-      .find({ '_property': req.params.properties })
+      .find({ '_property': {$in: req.body }})
       .populate('_property')
       .then(dbModel => {
         res.json(dbModel);

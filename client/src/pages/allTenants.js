@@ -17,20 +17,20 @@ class AllTenants extends Component {
     };
 
     getTenants = () => {
-        API.getAllTenants()
+        API.getUnassignedTenants()
             .then(res => {
                 this.setState({tenants: res.data})
+                console.log(this.state.tenants);
             })
             .catch(err => console.log(err));
     };
 
     handleTenantSelect = (tenant) => {
-        const { history } = this.props;
         const id = this.props.location.id;
         API.assignTenant(id, {$set: {_tenant: tenant}})
             .then(res => {
                 alert("Tenant added");
-                history.push("/home");
+                window.location = "/home";
             })
             .catch(err => console.log(err));
     };

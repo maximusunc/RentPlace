@@ -7,8 +7,8 @@ router.route("/")
   .post(usersController.create);
 
   // Matches with "/api/users/allTenants"
-router.route("/findAllTenants")
-  .get(usersController.findAllTenants)
+router.route("/findunassignedtenants")
+  .get(usersController.findUnassignedTenants)
 
 // Matches with "/api/users/:id"
 router.route("/:email")

@@ -16,14 +16,20 @@ class Myservicereq extends Component {
     };
 
     getservicereq = (properties) => {
-        console.log(properties);
         API.getServiceReqByProperty(properties)
             .then(res => 
             {
                 this.setState({ servicereq: res.data });
-                console.log(this.state.servicereq);
             })
             .catch(err => console.log(err));
+    };
+
+    handleDelete = (id) => {
+        API.deleteServiceReq(id)
+            .then(res => {
+                window.location = "/home";
+            })
+            .catch(err => alert("Something went wrong"));
     };
 
     render() {
@@ -39,8 +45,8 @@ class Myservicereq extends Component {
                                 subject={servicereq.subject}
                                 description={servicereq.description}
                                 notes={servicereq.notes}
-                                completed={servicereq.completed}
                                 date={servicereq.date}
+                                handleDelete={() => this.handleDelete(servicereq._id)}
                             />
                             );
                         })}

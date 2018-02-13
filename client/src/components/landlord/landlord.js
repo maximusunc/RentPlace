@@ -37,9 +37,13 @@ class Landlord extends Component {
 
                 <ul>
                 {this.state.properties.length ? (
-                    this.state.properties.map(property => (
-                        <li key={property._id}><Link to={{pathname: "/allTenants", id: property._id }}>{property.address1}</Link></li>
-                    ))
+                    this.state.properties.map(property => {
+                        if (!property._tenant) {
+                            return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
+                        } else {
+                            return <li key={property._id}>{property.address1}:  {property._tenant.name}</li>
+                        } 
+                    })
                 ) : (
                     <p>You don't have any properties yet.</p>
                 )}
@@ -49,11 +53,6 @@ class Landlord extends Component {
                     <Link to={{pathname: "/properties", id: this.props.id }}>Add a property</Link>
                 </button>
         
-        
-                {/* <Link to={`/properties/`}>View Properties</Link>
-                <ul>
-                    
-                </ul> */}
                 <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
                     <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }}>View Service Reqeusts</Link>
                 </button>

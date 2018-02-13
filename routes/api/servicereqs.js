@@ -13,8 +13,8 @@ router.route("/:id")
   .delete(serviceController.remove);
 
   // Matches with "/api/servicereqs/findbyproperty"
-router.route("/findbyproperty/:properties")
-  .get(serviceController.findByProperty);
+router.route("/findbyproperty")
+  .post(serviceController.findByProperty);
 
 // Matches with "/api/servicereqs/findbytenant/:id"
 router.route("/findbytenant/:id")
