@@ -2,6 +2,9 @@
     background: #2af42a;
     opacity: 0.8;
     margin: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
   
 .footimg {
@@ -12,4 +15,9 @@
     margin-right: auto;
     display: inline-block;
     padding: 5px;
+}
+
+#social {
+    display: flex;
+    justify-content: space-between;
 }

@@ -32,20 +32,20 @@ class Myproperties extends Component {
                     <div>
                         <PropertyList>
                             {this.state.properties.map(property => {
-                            return (
-                            <Property           
-                                address1={property.address1}
-                                address2={property.address2}
-                                city={property.city}
-                                state={property.state}
-                                zip={property.zip}
-                                leaseStart={property.leaseStart}
-                                leaseEnd={property.leaseEnd}
-                                rentAmt={property.rentAmt}
-                                id={property.id}
-                            />
-                            );
-                        })}
+                                return (
+                                <Property           
+                                    address1={property.address1}
+                                    address2={property.address2}
+                                    city={property.city}
+                                    state={property.state}
+                                    zip={property.zip}
+                                    leaseStart={property.leaseStart}
+                                    leaseEnd={property.leaseEnd}
+                                    rentAmt={property.rentAmt}
+                                    id={property.id}
+                                />
+                                );
+                            })}
                         </PropertyList>
                     </div>
             </Container>

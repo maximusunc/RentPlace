@@ -35,22 +35,28 @@ class Myservicereq extends Component {
     render() {
         return (
             <Container>
-                    <div>
-                        <ServiceReqList>
-                            {this.state.servicereq.map( servicereq => {
-                            return (
-                            <ServiceReq   
-                                key={servicereq._id}
-                                property={servicereq._property.address1}      
-                                subject={servicereq.subject}
-                                description={servicereq.description}
-                                notes={servicereq.notes}
-                                date={servicereq.date}
-                                handleDelete={() => this.handleDelete(servicereq._id)}
-                            />
-                            );
-                        })}
-                        </ServiceReqList>
+                    <div className="card">
+                        <h4><i className="material-icons small">build</i>  Open Service Requests</h4>
+                        {this.state.servicereq.length ? (
+                            <ServiceReqList>
+                                {this.state.servicereq.map( servicereq => {
+                                return (
+                                <ServiceReq   
+                                    key={servicereq._id}
+                                    property={servicereq._property.address1}      
+                                    subject={servicereq.subject}
+                                    description={servicereq.description}
+                                    notes={servicereq.notes}
+                                    date={servicereq.date}
+                                    handleDelete={() => this.handleDelete(servicereq._id)}
+                                />
+                                );
+                            })}
+                            </ServiceReqList>
+                        ) : (
+                            <h5>You don't have any open service requests.</h5>
+                        )}
+                        
                     </div>
             </Container>
         );

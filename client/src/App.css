@@ -3,6 +3,9 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 20rem;
 }
 
 main {
@@ -14,6 +17,13 @@ h4 {
     font-family: tahoma;
     line-height: 50px;
     font-size: 35px;
+}
+
+h5 {
+    color: white;
+    font-family: tahoma;
+    line-height: 50px;
+    font-size: 25px;
 }
 
 h3 {
@@ -33,4 +43,12 @@ h3 {
     position: absolute;
     right: 10px;
     top: 10px;
+}
+
+.button {
+    margin: 5px 0px;
+}
+
+input {
+    color: #cccccc;
 }

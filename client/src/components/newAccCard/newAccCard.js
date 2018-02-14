@@ -4,7 +4,7 @@ import "./newAccCard.css";
 const NewAccCard = props =>
     <div className="card">
         <div className="card-title">
-            <h4>Create Account</h4>
+            <h4>Create New Account</h4>
         </div>
         <div className="card-content">
             <div className="row">
@@ -69,7 +69,7 @@ const NewAccCard = props =>
             
         </div>
         <div className="card-action">
-            <button className="waves-effect waves-teal btn-large" onClick={props.onClick}><i className="material-icons left">add</i>Create</button>
+            <button className="waves-effect waves-teal btn-large" onClick={props.onClick}><i className="material-icons left">save</i>Save</button>
         </div>
     </div>;
 

@@ -45,7 +45,7 @@ class Properties extends Component {
             <Container>
                 <div className="card">
                     <div className="card-title">
-                        <h4>Add Property</h4>
+                        <h4>Add a Property</h4>
                     </div>
                     <div className="card-content">
                         <div className="row">
@@ -95,7 +95,7 @@ class Properties extends Component {
                         
                     </div>
                     <div className="card-action">
-                        <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Create</button>
+                        <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">save</i>Save</button>
                     </div>
                 </div>
             </Container>
