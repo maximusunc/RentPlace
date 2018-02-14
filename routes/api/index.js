@@ -5,8 +5,10 @@ const serviceRoutes = require("./servicereqs");
 
 // User routes
 router.use("/users", userRoutes);
+
 // Property routes
 router.use("/properties", propertyRoutes);
+
 // Service Reqs routes
 router.use("/servicereqs", serviceRoutes);
 

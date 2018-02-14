@@ -24,7 +24,7 @@ export default class Auth {
     getAccessToken() {
         const accessToken = localStorage.getItem('access_token');
         if (!accessToken) {
-          throw new Error('No Access Token found');
+            throw new Error('No Access Token found');
         }
         return accessToken;
     };
@@ -70,10 +70,10 @@ export default class Auth {
     getProfile(cb) {
         let accessToken = this.getAccessToken();
         this.auth0.client.userInfo(accessToken, (err, profile) => {
-          if (profile) {
+            if (profile) {
             this.userProfile = profile;
-          }
-          cb(err, profile);
+            }
+        cb(err, profile);
         });
     };
 }

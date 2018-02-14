@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// mongo layout for service requests
 const serviceReqSchema = new Schema({
     _landlord: { type: Schema.Types.ObjectId, ref: 'User' },
     _tenant: { type: Schema.Types.ObjectId, ref: 'User' },

@@ -2,6 +2,7 @@ const db = require("../models");
 
 // Defining methods for the propertiesController
 module.exports = {
+  // find all properties
   findAll: function(req, res) {
     db.Property
       .find(req.query)
@@ -10,7 +11,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // find by id
+  // find property by id
   findById: function(req, res) {
     db.Property
       .findById(req.params.id)
@@ -19,7 +20,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // find by landlord
+  // find property by landlord
   findByLandlord: function (req, res) {
     db.Property
       .find({ '_landlord': req.params.id })
@@ -28,7 +29,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // find by tenant
+  // find property by tenant
   findByTenant: function (req, res) {
     db.Property
       .findOne({ '_tenant': req.params.id })

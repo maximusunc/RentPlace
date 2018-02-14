@@ -4,8 +4,6 @@ import API from "../utils/API";
 import TenantList from "../components/tenantList";
 import Tenant from "../components/allTenants";
 
-
-
 class AllTenants extends Component {
 
     state = {
