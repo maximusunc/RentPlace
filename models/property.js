@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-// const mongooseEmail = require('mongoose-type-email');
 const Schema = mongoose.Schema;
 
+// mongo layout for properties
 const propertySchema = new Schema({
     _landlord: { type: Schema.Types.ObjectId, ref: 'User' },
     _tenant: { type: Schema.Types.ObjectId, ref: 'User' },

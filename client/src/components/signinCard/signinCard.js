@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "./signinCard.css";
 
 class SigninCard extends Component {
-    state = {
-
-    };
+    state = {};
 
     render() {
         return (

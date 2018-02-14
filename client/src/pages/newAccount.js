@@ -3,7 +3,6 @@ import Container from "../components/container";
 import NewAccCard from "../components/newAccCard";
 import API from "../utils/API";
 
-
 const defaultState = {
     selected: "",
     name: "",
