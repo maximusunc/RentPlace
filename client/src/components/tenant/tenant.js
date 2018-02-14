@@ -65,19 +65,24 @@ class Tenant extends Component {
                     <p>Your landlord needs to add you to the property</p>
                 )}
                 
-                <div className="card-action">
-                    <Link to={{pathname: "/servicereq", id: {property: this.state.id, tenant: this.props.id} }}>
-                        <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                            Create a Service Reqeust
-                        </button>
-                    </Link>
+                
+                {this.state.address1 ? (
+                    <div className="card-action">
+                        <Link to={{pathname: "/servicereq", id: {property: this.state.id, tenant: this.props.id} }}>
+                            <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
+                                Create a Reqeust
+                            </button>
+                        </Link>
 
-                    <Link to={{ pathname: "/myservicereqs", id: [this.state.id] }}>
-                        <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                            View Service Reqeusts
-                        </button>
-                    </Link>
-                </div>
+                        <Link to={{ pathname: "/myservicereqs", id: [this.state.id] }}>
+                            <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
+                                View Service Reqeusts
+                            </button>
+                        </Link>
+                    </div>
+                ) : (
+                    null
+                )}
                 
             </Container>
         );
