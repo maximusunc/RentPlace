@@ -2,6 +2,7 @@ const db = require("../models");
 
 // Defining methods for the serviceController
 module.exports = {
+  // find all service requests, populate landlord and tenant info
   findAll: function(req, res) {
     db.ServiceReq
       .find({})
@@ -10,6 +11,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  // find service request by id
   findById: function(req, res) {
     db.ServiceReq
       .findById(req.params.id)
@@ -18,7 +20,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // find by property id
+  // find service request by property id
   findByPropId: function (req, res) {
     db.ServiceReq
       .find({ '_property': req.params.id })
@@ -27,7 +29,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // find by property
+  // find service request by property
   findByProperty: function (req, res) {
     db.ServiceReq
       .find({ '_property': {$in: req.body }})
@@ -37,7 +39,7 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
-  // find by tenant
+  // find service request by tenant
   findByTenant: function (req, res) {
     db.ServiceReq
       .find({ '_tenant': req.params.id })

@@ -2,17 +2,19 @@ const router = require("express").Router();
 const request = require("request");
 const db = require("../../models");
 
+// connect to auth0
 var options = { method: 'POST',
   url: 'https://rentplace.auth0.com/dbconnections/signup',
   headers: { 'content-type': 'application/json' },
   body: 
-   { client_id: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
-     email: '',
-     password: '',
-     connection: 'Username-Password-Authentication' },
+  { client_id: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
+    email: '',
+    password: '',
+    connection: 'Username-Password-Authentication' },
   json: true 
 };
 
+// capture email address from auth0 and then create local user
 router.post("/signup", (req, res) => {
   options.body.email = req.body.email;
   options.body.password = req.body.password;

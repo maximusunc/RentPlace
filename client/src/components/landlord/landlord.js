@@ -10,6 +10,7 @@ class Landlord extends Component {
         propertyIDs: []
     };
 
+    // on mount, get properties by landlord ID, map through the array and set state
     componentDidMount() {
         API.getPropertyByLandlord(this.props.id)
             .then(res => {
@@ -20,6 +21,7 @@ class Landlord extends Component {
             .catch(err => console.log(err));
     };
 
+    // render results to page
     render() {
         return (
             <Container>
@@ -39,6 +41,7 @@ class Landlord extends Component {
                 <ul>
                 {this.state.properties.length ? (
                     this.state.properties.map(property => {
+                        {/* display if property has no tenant assigned */}
                         if (!property._tenant) {
                             return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
                         } else {
