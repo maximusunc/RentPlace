@@ -15,7 +15,7 @@ class Splash extends Component {
                 <Container>
                     <div className="row">
                         <div className="col s12 m12">
-                            <div className="card small">
+                            <div className="card medium">
                                 <div className="card-content">
                                     <h4>Welcome to RentPlace!</h4>
                                     <h4>We offer a cutting-edge property management platform for tenants, landlords, and owners</h4>

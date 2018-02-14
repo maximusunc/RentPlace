@@ -5,7 +5,7 @@ import API from "../utils/API";
 
 
 const defaultState = {
-    selected: "Tenant",
+    selected: "",
     name: "",
     address1: "",
     address2: "",

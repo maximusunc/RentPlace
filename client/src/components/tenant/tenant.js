@@ -16,7 +16,7 @@ class Tenant extends Component {
         id: ""
     };
 
-    componentDidUpdate() {
+    componentDidMount() {
         API.getPropertyByTenant(this.props.id)
             .then(res => {
                 this.setState({
