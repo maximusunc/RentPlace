@@ -5,9 +5,16 @@ const Footer = () =>
     <footer className="page-footer">
         <div className="container">
             <div className="row">
-                <div className="col l6 s12">
+                <img src="./images/apts.jpg" className="aptsimg responsive-img" alt="apartments" />
+            </div>
+            <div id="social" className="row">
+                <div className="col s4">
                     <a href="https://www.facebook.com/grndprxguy1" target="blank" rel="noopener noreferrer"><img src="./images/facebook.png" className="footimg" alt="Facebook" /></a>
+                </div>
+                <div className="col s4">
                     <a href="https://github.com/maximusunc/RentPlace" target="_blank" rel="noopener noreferrer"><img src="./images/github.png" className="footimg" alt="Github" /></a>
+                </div>
+                <div className="col s4">
                     <a href="https://rent-place.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="./images/twitter.png" className="footimg" alt="Heroku" /></a>
                 </div>
             </div>

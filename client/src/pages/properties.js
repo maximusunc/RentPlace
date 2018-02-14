@@ -95,7 +95,7 @@ class Properties extends Component {
                         
                     </div>
                     <div className="card-action">
-                        <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Create</button>
+                        <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">save</i>Save</button>
                     </div>
                 </div>
             </Container>

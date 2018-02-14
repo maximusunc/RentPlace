@@ -30,29 +30,30 @@ class NewAccount extends Component {
     
     handleFormSubmit = (event) => {
         event.preventDefault();
-        const password = this.state.password.length;
-        
-        if (password >= 6) {
-            API.userSignUp({
-                name: this.state.name,
-                role: this.state.selected,
-                email: this.state.email,
-                address1: this.state.address1,
-                address2: this.state.address2,
-                city: this.state.city,
-                state: this.state.state,
-                zip: this.state.zip,
-                phone: this.state.phone,
-                password: this.state.password
-            }).then(res => {
-                alert("Successfully added. Now please sign in from the main page.");
-                window.location = "/";
-            }
-            ).catch(err =>
-                alert("Something went wrong. Please make sure you filled out each field and are using a unique email.")
-            );
-        } else {
-            alert("Password needs to be at least 6 characters");
+        if (this.state.password) {
+            const password = this.state.password.length;
+            if (password >= 6) {
+                API.userSignUp({
+                    name: this.state.name,
+                    role: this.state.selected,
+                    email: this.state.email,
+                    address1: this.state.address1,
+                    address2: this.state.address2,
+                    city: this.state.city,
+                    state: this.state.state,
+                    zip: this.state.zip,
+                    phone: this.state.phone,
+                    password: this.state.password
+                }).then(res => {
+                    alert("Successfully added. Now please sign in from the main page.");
+                    window.location = "/";
+                }
+                ).catch(err =>
+                    alert("Something went wrong. Please make sure you filled out each field and are using a unique email.")
+                );
+            } else {
+                alert("Password needs to be at least 6 characters");
+            };
         };
     };
 

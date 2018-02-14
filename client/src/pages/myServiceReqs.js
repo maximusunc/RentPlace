@@ -35,7 +35,8 @@ class Myservicereq extends Component {
     render() {
         return (
             <Container>
-                    <div>
+                    <div className="card">
+                        <h4><i className="material-icons small">build</i>  Open Service Requests</h4>
                         <ServiceReqList>
                             {this.state.servicereq.map( servicereq => {
                             return (

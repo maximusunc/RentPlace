@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Container from "../components/container";
 import API from "../utils/API";
 import Tenant from "../components/tenant";
 import Landlord from "../components/landlord";
@@ -59,7 +58,7 @@ class UserPage extends Component {
 
     render() {
         return (
-            <Container>
+            <div>
             <button id="logout" className="waves-effect waves-teal btn-large" onClick={this.logOut}><i className="material-icons left">lock</i>Log Off</button>
             <div className="row">
                 <div className="col s12 m12">
@@ -93,12 +92,14 @@ class UserPage extends Component {
                                 />
                             </div>
                         ) : (
-                            <h4>Loading...</h4>
+                            <div>
+                                <h4>Loading...</h4>
+                            </div>
                         )}
                         </div>
                     </div>
                 </div>
-            </Container>
+            </div>
         );
     };
 };

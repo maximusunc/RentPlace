@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./landlord.css";
 import Container from "../container";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
@@ -48,18 +49,22 @@ class Landlord extends Component {
                     <p>You don't have any properties yet.</p>
                 )}
                 </ul>
+
+                <div className="card-action">
         
-                <Link to={{pathname: "/properties", id: this.props.id }}>
-                <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    Add a property
-                </button>
-                </Link>
-        
-                <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }}>
-                <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                    View Service Reqeusts
-                </button>
-                </Link>
+                    <Link to={{pathname: "/properties", id: this.props.id }} className="button">
+                    <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
+                        Add a property
+                    </button>
+                    </Link>
+            
+                    <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }} className="button">
+                    <button className="waves-effect waves-teal btn-large"><i className="material-icons left">visibility</i>
+                        View Service Reqeusts
+                    </button>
+                    </Link>
+
+                </div>
                 
             </Container>
         );
