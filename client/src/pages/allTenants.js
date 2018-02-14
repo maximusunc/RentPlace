@@ -42,7 +42,8 @@ class AllTenants extends Component {
     render() {
         return (
             <Container>
-                    <div>
+                    <div className="card">
+                        <h4>Assign a tenant to your property:</h4>
                         <TenantList>
                             {this.state.tenants.length ? (
                                 this.state.tenants.map(tenant => (
@@ -54,7 +55,7 @@ class AllTenants extends Component {
                                     />
                                 ))
                             ) : (
-                                <h4>All tenants have been assigned</h4>
+                                <h5>There are no available tenants to assign.</h5>
                             )}
                         </TenantList>
                     </div>

@@ -18,6 +18,7 @@ class Home extends Component {
     return (
       <div>
         <Link to="/home"><button id="home" className="waves-effect waves-teal btn-large"><i className="material-icons left">home</i>Home</button></Link>
+        {/* if the user is signed in, show thier info */}
         {
           isAuthenticated() &&
           <div className="container column">
@@ -26,6 +27,7 @@ class Home extends Component {
             />
           </div>
         }
+        {/* if the user isn't signed in, show the splash page */}
         {
           !isAuthenticated() && (
             <div className="container column">

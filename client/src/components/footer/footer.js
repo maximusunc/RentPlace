@@ -15,7 +15,7 @@ const Footer = () =>
                     <a href="https://github.com/maximusunc/RentPlace" target="_blank" rel="noopener noreferrer"><img src="./images/github.png" className="footimg" alt="Github" /></a>
                 </div>
                 <div className="col s4">
-                    <a href="https://rent-place.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="./images/twitter.png" className="footimg" alt="Heroku" /></a>
+                    <a href="https://rent-place.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="./images/heroku.svg" className="footimg" alt="Heroku" /></a>
                 </div>
             </div>
         </div>

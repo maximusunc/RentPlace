@@ -3,6 +3,9 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 20rem;
 }
 
 main {

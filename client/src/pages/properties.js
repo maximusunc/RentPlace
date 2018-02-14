@@ -45,7 +45,7 @@ class Properties extends Component {
             <Container>
                 <div className="card">
                     <div className="card-title">
-                        <h4>Add Property</h4>
+                        <h4>Add a Property</h4>
                     </div>
                     <div className="card-content">
                         <div className="row">
