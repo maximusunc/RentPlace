@@ -39,9 +39,9 @@ class Landlord extends Component {
                 <h3>Properties:</h3>
 
                 <ul>
+                {/* display depending on if property has no tenant assigned */}
                 {this.state.properties.length ? (
                     this.state.properties.map(property => {
-                        {/* display if property has no tenant assigned */}
                         if (!property._tenant) {
                             return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
                         } else {
