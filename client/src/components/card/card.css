@@ -1,0 +1,21 @@
+.card {
+    background: #227c7c;
+    text-align: center;
+    opacity: 0.85;
+    height: 100%;
+}
+
+.card-action {
+    width: 100%;
+}
+
+.waves-effect.waves-teal.btn-large {
+    background-color: #2af42a;
+    margin: 5px 10px;
+}
+
+.waves-effect.waves-teal.btn-medium {
+    background-color: #2af42a;
+    margin: 10px 10px;
+    color: white;
+}

@@ -1,21 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import React, { Component } from "react";
+import Container from "./components/container";
+import Card from "./components/card";
 
-const App = () =>
-  <Router>
-    <div>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Books} />
-        <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
-        <Route component={NoMatch} />
-      </Switch>
-    </div>
-  </Router>;
+class Splash extends Component {
+    state = {
 
-export default App;
+    };
+
+    render() {
+        return (
+            <div>
+                <Container>
+                    <div className="row">
+                        <div className="col s12 m12">
+                            <Card />
+                        </div>
+                    </div>
+                </Container>
+            </div>
+        );
+    };
+}
+
+export default Splash;

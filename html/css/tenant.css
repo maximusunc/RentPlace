@@ -1,0 +1,150 @@
+body {
+  background: #136289;
+  font-weight: 500;
+  font-color: #99cfe0;
+}
+
+
+h4 {
+  color: white;
+  font-family: tahoma;
+  font-size: 35px;
+  position: relative;
+  line-height: 100px;
+}
+
+h5 {
+  position: relative;
+  transform: translateY(-20%);
+  text-align: center;
+  margin-top: 30px;
+}
+
+li {
+  color: #99cfe0;
+}
+
+.tabs .tab a.active {
+  color: #2af42a;
+  font-size: 18px;
+}
+
+.tabs .tab a:hover {
+  color: #2af42a;
+  font-size: 18px;
+}
+
+.tabs .tab a {
+  color: #99cfe0;
+  font-size: 18px;
+}
+
+.tabs .indicator {
+    background-color: silver;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+#tabs-swipe-demo {
+  background-color: #227c7c;
+}
+
+#listings {
+  color: white;
+  background: #227c7c;
+  height: 500px;
+}
+
+#rentinfo {
+  color: white;
+  background: #227c7c;
+  height: 500px;
+}
+
+#contact {
+  color: white;
+  background: #227c7c;
+  height: 500px;
+}
+
+#service {
+  color: white;
+  background: #227c7c;
+  height: 500px;
+}
+
+.col.s12.m12 {
+  margin-top: 50px;
+}
+
+.titleimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background: #227c7c;
+  text-align: center;
+  size: 100%;
+}
+
+#textarea1 {
+  height: 200px;
+  width: 500px;
+ background-color: #00897b;
+ color: #99cfe0;
+ font-weight: 700;
+}
+
+#send {
+  background-color: #2af42a;
+}
+
+.btn-waves-effect.waves-teal-light.btn-large {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.page-footer {
+  background: #2af42a;
+  opacity: 0.85;
+  margin: 0;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 50px;
+}
+
+.footer-copyright {
+  opacity: 0.75;
+  position: relative;
+}
+
+.footimg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  padding: 5px;
+}
+
+.aptsimg {
+  margin-top: -15px;
+  margin-left: 30px;
+  margin-right: auto;
+  position: center;
+}
