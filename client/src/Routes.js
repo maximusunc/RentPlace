@@ -27,23 +27,25 @@ const Routes = () => (
     <div>
       <Link to="/home"><button id="home" className="waves-effect waves-teal btn-large"><i className="material-icons left">home</i>Home</button></Link>
         <Header />
-        <Switch>
-            <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
-            <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
-            <Route path="/callback" render={(props) => {
-                handleAuthentication(props);
-                return <Callback {...props} />
-            }}/>
-            {/* <Route exact path="/signin" render={(props) => <Signin auth={auth} {...props} />} /> */}
-            <Route exact path="/signup" render={(props) => <NewAccount auth={auth} {...props} />} />
-            {/* <Route exact path="/user" render={(props) => <UserPage auth={auth} {...props} />} /> */}
-            <Route exact path="/servicereq" render={(props) => <ServiceReq auth={auth} {...props} />} />
-            <Route exact path="/properties" render={(props) => <Properties auth={auth} {...props} />} />
-            {/* <Route exact path="/myproperties" render={(props) => <Myproperties auth={auth} {...props} />} /> */}
-            <Route exact path="/myservicereqs" render={(props) => <MyServiceReqs auth={auth} {...props} />} />
-            <Route exact path="/alltenants" render={(props) => <AllTenants auth={auth} {...props} />} />
-            <Route render={(props) => <NoMatch auth={auth} {...props} />} />
-        </Switch>
+        <div className="content">
+          <Switch>
+              <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
+              <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
+              <Route path="/callback" render={(props) => {
+                  handleAuthentication(props);
+                  return <Callback {...props} />
+              }}/>
+              {/* <Route exact path="/signin" render={(props) => <Signin auth={auth} {...props} />} /> */}
+              <Route exact path="/signup" render={(props) => <NewAccount auth={auth} {...props} />} />
+              {/* <Route exact path="/user" render={(props) => <UserPage auth={auth} {...props} />} /> */}
+              <Route exact path="/servicereq" render={(props) => <ServiceReq auth={auth} {...props} />} />
+              <Route exact path="/properties" render={(props) => <Properties auth={auth} {...props} />} />
+              {/* <Route exact path="/myproperties" render={(props) => <Myproperties auth={auth} {...props} />} /> */}
+              <Route exact path="/myservicereqs" render={(props) => <MyServiceReqs auth={auth} {...props} />} />
+              <Route exact path="/alltenants" render={(props) => <AllTenants auth={auth} {...props} />} />
+              <Route render={(props) => <NoMatch auth={auth} {...props} />} />
+          </Switch>
+        </div>
         <Footer />
     </div>
   </Router>
