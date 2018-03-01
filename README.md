@@ -13,9 +13,9 @@ To run, install packages using yarn install in the root and clients folders, the
 ![Login Page](./readmeScreenshots/login.png)
 
 3. The Landlord View
-   _ Create a property
-   _ Assign a tenant to a property
-   _ View open service requests
+    _ Create a property
+    _ Assign a tenant to a property
+    _ View open service requests
 
 ![Landlord Page](./readmeScreenshots/landlord.png)
 
@@ -24,9 +24,9 @@ To run, install packages using yarn install in the root and clients folders, the
 ![Create Property](./readmeScreenshots/createProperty.png)
 
 5. The Tenant View
-   _ View property details
-   _ Create service requests
-   _ View open service requests
+    _ View property details
+    _ Create service requests
+    _ View open service requests
 
 ![Tenant Page](./readmeScreenshots/renter.png)
 
