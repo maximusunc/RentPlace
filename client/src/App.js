@@ -7,10 +7,6 @@ class Splash extends Component {
 
     };
 
-    componentDidMount() {
-        console.log("test");
-    }
-
     render() {
         return (
             <div>
