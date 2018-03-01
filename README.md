@@ -6,4 +6,4 @@ To run, install packages using yarn install in the root and clients folders, the
 
 1. The Home Page
 
-![Home Page](../readmeScreenshots/homepage)
+![Home Page](./readmeScreenshots/homepage.png)
