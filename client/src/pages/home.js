@@ -9,6 +9,10 @@ class Splash extends Component {
         this.props.auth.login();
     };
 
+    componentDidMount() {
+        console.log("test");
+    }
+
     render() {
         return (
             <div>
