@@ -57,6 +57,6 @@ h3 {
     margin: 5px 0px;
 }
 
-input {
+input, textarea {
     color: #cccccc;
 }

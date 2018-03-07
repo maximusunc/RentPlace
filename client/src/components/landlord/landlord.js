@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./landlord.css";
-import Container from "../container";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 
@@ -24,9 +23,9 @@ class Landlord extends Component {
     // render results to page
     render() {
         return (
-            <Container>
+            <div>
                 <h3>Welcome, {this.props.name}</h3>
-                <ul>
+                <ul class="personalInfo">
                     <li>Email: {this.props.email}</li>
                     <li>Address1: {this.props.address1}</li>
                     <li>Address2: {this.props.address2}</li>
@@ -43,9 +42,26 @@ class Landlord extends Component {
                 {this.state.properties.length ? (
                     this.state.properties.map(property => {
                         if (!property._tenant) {
-                            return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link> <Link to={{pathname: "/editProperty", id: property._id }}>Edit</Link></li>
+                            return <li key={property._id}>
+                                <Link to={{pathname: "/editProperty", id: property._id }}>
+                                    <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>
+                                        Edit
+                                    </button>
+                                </Link>
+                                
+                                {property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link>
+                            </li>
                         } else {
-                            return <li key={property._id}>{property.address1}:  {property._tenant.name} <Link to={{pathname: "/editProperty", id: property._id }}>Edit</Link></li>
+                            return <li key={property._id}>
+                                <Link to={{pathname: "/editProperty", id: property._id }}>
+                                    <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>
+                                        Edit
+                                    </button>
+                                </Link>
+
+                                {property.address1}:  {property._tenant.name}
+
+                            </li>
                         }
                     })
                 ) : (
@@ -69,7 +85,7 @@ class Landlord extends Component {
 
                 </div>
                 
-            </Container>
+            </div>
         );
     };
 };

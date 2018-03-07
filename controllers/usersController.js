@@ -12,7 +12,7 @@ module.exports = {
   // find tenants not assigned to a property
   findUnassignedTenants: function(req, res) {
     db.User
-      .find({role: "Tenant", assigned: null})
+      .find({role: "Tenant", assigned: false})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -17,10 +17,13 @@ export default {
     return axios.get("/api/properties/findbylandlord/" + id);
   },
   getPropertyById: function (id) {
-    return axios.get("/api/properites/" + id);
+    return axios.get("/api/properties/" + id);
   },
   getPropertyByTenant: function (id) {
     return axios.get("/api/properties/findbytenant/" + id);
+  },
+  updatePropertyById: function(id, propertyUpdate) {
+    return axios.put("/api/properties/" + id, propertyUpdate);
   },
   getAllProperties: function () {
     return axios.get("/api/properties/");

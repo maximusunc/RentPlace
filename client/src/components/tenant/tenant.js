@@ -38,7 +38,7 @@ class Tenant extends Component {
         return (
             <Container>
                 <h3>Welcome, {this.props.name}</h3>
-                <ul>
+                <ul class="personalInfo">
                     <li>Email: {this.props.email}</li>
                     <li>Address1: {this.props.address1}</li>
                     <li>Address2: {this.props.address2}</li>
@@ -62,7 +62,7 @@ class Tenant extends Component {
                         <li>Rent Amount: {this.state.rentAmt}</li>
                     </ul>
                 ) : (
-                    <p>Your landlord needs to add you to the property</p>
+                    <h5>Your landlord needs to add you to a property</h5>
                 )}
                 
                 
