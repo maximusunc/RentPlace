@@ -13,6 +13,7 @@ module.exports = {
   },
   // find property by id
   findById: function(req, res) {
+    console.log(req.params.id);
     db.Property
       .findById(req.params.id)
       .populate('_landlord')
