@@ -46,7 +46,8 @@ class Landlord extends Component {
                             return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
                         } else {
                             return <li key={property._id}>{property.address1}:  {property._tenant.name}</li>
-                        } 
+                        }
+                        <Link to={{pathname: "/editProperty", id: property._id }}>Edit</Link>
                     })
                 ) : (
                     <p>You don't have any properties yet.</p>

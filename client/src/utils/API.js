@@ -22,6 +22,9 @@ export default {
   getPropertyByLandlord: function (id) {
     return axios.get("/api/properties/findbylandlord/" + id);
   },
+  getPropertyById: function (id) {
+    return axios.get("/api/properites/" + id);
+  },
   getUnassignedTenants: function() {
     return axios.get("/api/users/findunassignedtenants");
   },
