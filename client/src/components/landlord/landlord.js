@@ -43,11 +43,10 @@ class Landlord extends Component {
                 {this.state.properties.length ? (
                     this.state.properties.map(property => {
                         if (!property._tenant) {
-                            return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
+                            return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link> <Link to={{pathname: "/editProperty", id: property._id }}>Edit</Link></li>
                         } else {
-                            return <li key={property._id}>{property.address1}:  {property._tenant.name}</li>
+                            return <li key={property._id}>{property.address1}:  {property._tenant.name} <Link to={{pathname: "/editProperty", id: property._id }}>Edit</Link></li>
                         }
-                        <Link to={{pathname: "/editProperty", id: property._id }}>Edit</Link>
                     })
                 ) : (
                     <p>You don't have any properties yet.</p>
