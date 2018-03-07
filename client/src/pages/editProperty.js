@@ -26,7 +26,8 @@ class EditProperties extends Component {
                     leaseStart: res.data.leaseStart,
                     leaseEnd: res.data.leaseEnd,
                     rentAmt: res.data.resAmt
-                })
+                });
+                console.log(res.data);
             })
             .catch(err => console.log(err));
     };
@@ -62,7 +63,7 @@ class EditProperties extends Component {
             <Container>
                 <div className="card">
                     <div className="card-title">
-                        <h4>Add a Property</h4>
+                        <h4>Edit Property</h4>
                     </div>
                     <div className="card-content">
                         <div className="row">
