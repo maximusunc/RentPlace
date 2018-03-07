@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import Splash from './pages/home';
+import Splash from './pages/splash';
 import UserPage from "./pages/userPage";
 
 class Home extends Component {
-  // calls the login method in authentication service
-  login = () => {
-    this.props.auth.login();
-  }
   // calls the logout method in authentication service
   logout = () => {
     this.props.auth.logout();
