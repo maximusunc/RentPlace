@@ -49,7 +49,7 @@ class Landlord extends Component {
                         }
                     })
                 ) : (
-                    <p>You don't have any properties yet.</p>
+                    <h5>You don't have any properties yet.</h5>
                 )}
                 </ul>
 

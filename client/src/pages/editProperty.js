@@ -27,7 +27,7 @@ class EditProperties extends Component {
                     leaseEnd: res.data.leaseEnd,
                     rentAmt: res.data.resAmt
                 });
-                console.log(res.data);
+                console.log(res);
             })
             .catch(err => console.log(err));
     };
