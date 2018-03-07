@@ -13,20 +13,18 @@ export default {
   createProperty: function(property) {
     return axios.post("/api/properties", property);
   },
-  createServiceReq: function(servicereq) {
-    return axios.post("/api/servicereqs", servicereq);
-  },
-  deleteServiceReq: function(id) {
-    return axios.delete("/api/servicereqs/" + id);
-  },
   getPropertyByLandlord: function (id) {
     return axios.get("/api/properties/findbylandlord/" + id);
   },
   getPropertyById: function (id) {
+    console.log(id);
     return axios.get("/api/properites/" + id);
   },
-  getUnassignedTenants: function() {
-    return axios.get("/api/users/findunassignedtenants");
+  getPropertyByTenant: function (id) {
+    return axios.get("/api/properties/findbytenant/" + id);
+  },
+  getAllProperties: function () {
+    return axios.get("/api/properties/");
   },
   assignTenant: function(id, tenantUpdate) {
     return axios.put("/api/properties/" + id, tenantUpdate);
@@ -34,19 +32,22 @@ export default {
   updateTenant: function(id, tenantAssigned) {
     return axios.put("/api/users/" + id, tenantAssigned);
   },
-  getServiceReqByProperty: function (properties) {
-    return axios.post("/api/servicereqs/findbyproperty", properties);
-  },
-  getPropertyByTenant: function (id) {
-    return axios.get("/api/properties/findbytenant/" + id);
-  },
-  getServiceReqByTenant: function (id) {
-    return axios.get("/api/servicereqs/findbytenant/" + id);
-  },
-  getAllProperties: function () {
-    return axios.get("/api/properties/");
+  getUnassignedTenants: function() {
+    return axios.get("/api/users/findunassignedtenants");
   },
   getAllTenants: function () {
     return axios.get("/api/users/findAllTenants");
+  },
+  createServiceReq: function(servicereq) {
+    return axios.post("/api/servicereqs", servicereq);
+  },
+  deleteServiceReq: function(id) {
+    return axios.delete("/api/servicereqs/" + id);
+  },
+  getServiceReqByProperty: function (properties) {
+    return axios.post("/api/servicereqs/findbyproperty", properties);
+  },
+  getServiceReqByTenant: function (id) {
+    return axios.get("/api/servicereqs/findbytenant/" + id);
   }
 };
