@@ -31,13 +31,14 @@ module.exports = {
   },
   // find service request by property
   findByProperty: function (req, res) {
-    db.ServiceReq
-      .find({ '_property': {$in: req.body }})
-      .populate('_property')
-      .then(dbModel => {
-        res.json(dbModel);
-      })
-      .catch(err => res.status(422).json(err));
+    console.log(req.body);
+    // db.ServiceReq
+    //   .find({ '_property': {$in: req.body }})
+    //   .populate('_property')
+    //   .then(dbModel => {
+    //     res.json(dbModel);
+    //   })
+    //   .catch(err => res.status(422).json(err));
   },
   // find service request by tenant
   findByTenant: function (req, res) {

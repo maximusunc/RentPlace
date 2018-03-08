@@ -23,7 +23,7 @@ class Properties extends Component {
         const { history } = this.props;
         event.preventDefault();
         API.createProperty({
-            _landlord: this.props.location.id,
+            _landlord: localStorage.getItem("userId"),
             address1: this.state.address1,
             address2: this.state.address2,
             city: this.state.city,

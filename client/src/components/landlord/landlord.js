@@ -11,13 +11,22 @@ class Landlord extends Component {
 
     // on mount, get properties by landlord ID, map through the array and set state
     componentDidMount() {
-        API.getPropertyByLandlord(this.props.id)
-            .then(res => {
-                const propertyIDs = [];
-                res.data.map(property => propertyIDs.push(property._id));
-                this.setState({properties: res.data, propertyIDs: propertyIDs});
-            })
-            .catch(err => console.log(err));
+        this.getProperties(this.props.id);
+    };
+
+    getProperties = (landlordId) => {
+        API.getPropertyByLandlord(landlordId)
+        .then(res => {
+            const propertyIDs = [];
+            res.data.map(property => propertyIDs.push(property._id));
+            this.setState({properties: res.data, propertyIDs: propertyIDs});
+            localStorage.setItem("propertyId", propertyIDs);
+        })
+        .catch(err => console.log(err));
+    }
+
+    handleEdit = (propertyId) => {
+        localStorage.setItem("propertyId", propertyId);
     };
 
     // render results to page
@@ -25,7 +34,7 @@ class Landlord extends Component {
         return (
             <div>
                 <h3>Welcome, {this.props.name}</h3>
-                <ul class="personalInfo">
+                <ul className="personalInfo">
                     <li>Email: {this.props.email}</li>
                     <li>Address1: {this.props.address1}</li>
                     <li>Address2: {this.props.address2}</li>
@@ -43,18 +52,18 @@ class Landlord extends Component {
                     this.state.properties.map(property => {
                         if (!property._tenant) {
                             return <li key={property._id}>
-                                <Link to={{pathname: "/editProperty", id: property._id }}>
-                                    <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>
+                                <Link to={{pathname: "/editProperty"}}>
+                                    <button className="waves-effect waves-teal btn-medium" onClick={() => this.handleEdit(property._id)}><i className="material-icons left">edit</i>
                                         Edit
                                     </button>
                                 </Link>
-                                
+
                                 {property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link>
                             </li>
                         } else {
                             return <li key={property._id}>
-                                <Link to={{pathname: "/editProperty", id: property._id }}>
-                                    <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>
+                                <Link to={{pathname: "/editProperty"}}>
+                                    <button className="waves-effect waves-teal btn-medium" onClick={() => this.handleEdit(property._id)}><i className="material-icons left">edit</i>
                                         Edit
                                     </button>
                                 </Link>
@@ -71,13 +80,13 @@ class Landlord extends Component {
 
                 <div className="card-action">
         
-                    <Link to={{pathname: "/properties", id: this.props.id }} className="button">
+                    <Link to={{pathname: "/properties"}} className="button">
                     <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
                         Add a property
                     </button>
                     </Link>
             
-                    <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }} className="button">
+                    <Link to={{pathname: "/myservicereqs"}} className="button">
                     <button className="waves-effect waves-teal btn-large"><i className="material-icons left">visibility</i>
                         View Service Reqeusts
                     </button>

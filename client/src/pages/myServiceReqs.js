@@ -5,17 +5,16 @@ import ServiceReqList from "../components/serviceReqList";
 import ServiceReq from "../components/servicereq";
 
 class Myservicereq extends Component {
-
-    componentDidMount() {
-        const properties = this.props.location.id;
-        this.getservicereq(properties);
-    };
-
     state = {
         servicereq: []
     };
 
+    componentDidMount() {
+        this.getservicereq(localStorage.getItem("propertyId").split(","));
+    };
+
     getservicereq = (properties) => {
+        console.log(properties);
         API.getServiceReqByProperty(properties)
             .then(res => 
             {
@@ -30,6 +29,14 @@ class Myservicereq extends Component {
                 window.location = "/home";
             })
             .catch(err => alert("Something went wrong"));
+    };
+
+    convertDate = (date) => {
+        var newDate = new Date(date);
+        var month = newDate.getMonth() + 1;
+        var day = newDate.getDate();
+        var year = newDate.getFullYear();
+        return month + "/" + day + "/" + year;
     };
 
     render() {
@@ -47,7 +54,7 @@ class Myservicereq extends Component {
                                     subject={servicereq.subject}
                                     description={servicereq.description}
                                     notes={servicereq.notes}
-                                    date={servicereq.date}
+                                    date={this.convertDate(servicereq.date)}
                                     handleDelete={() => this.handleDelete(servicereq._id)}
                                 />
                                 );

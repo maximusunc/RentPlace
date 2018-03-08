@@ -14,7 +14,7 @@ router.route("/:id")
 
   // Matches with "/api/servicereqs/findbyproperty"
 router.route("/findbyproperty")
-  .post(serviceController.findByProperty);
+  .get(serviceController.findByProperty);
 
 // Matches with "/api/servicereqs/findbytenant/:id"
 router.route("/findbytenant/:id")

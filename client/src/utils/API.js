@@ -47,7 +47,8 @@ export default {
     return axios.delete("/api/servicereqs/" + id);
   },
   getServiceReqByProperty: function (properties) {
-    return axios.post("/api/servicereqs/findbyproperty", properties);
+    console.log(properties);
+    return axios.get("/api/servicereqs/findbyproperty", properties);
   },
   getServiceReqByTenant: function (id) {
     return axios.get("/api/servicereqs/findbytenant/" + id);

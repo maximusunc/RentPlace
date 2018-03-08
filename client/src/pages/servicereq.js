@@ -17,8 +17,8 @@ class ServiceReq extends Component {
         const { history } = this.props;
         event.preventDefault();
         API.createServiceReq({
-            _tenant: this.props.location.id.tenant,
-            _property: this.props.location.id.property,
+            _tenant: localStorage.getItem("userId"),
+            _property: localStorage.getItem("propertyId"),
             subject: this.state.subject,
             description: this.state.description,
             notes: this.state.notes

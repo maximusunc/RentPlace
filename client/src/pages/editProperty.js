@@ -17,7 +17,7 @@ class EditProperties extends Component {
     };
 
     componentDidMount() {
-        API.getPropertyById(this.props.location.id)
+        API.getPropertyById(localStorage.getItem("propertyId"))
             .then(res => {
                 this.setState({
                     address1: res.data.address1,
@@ -76,7 +76,15 @@ class EditProperties extends Component {
                 })  
             })
             .catch(err => alert("Something went wrong. Please try again."));
-    }
+    };
+
+    convertDate = (date) => {
+        var newDate = new Date(date);
+        var month = newDate.getMonth() + 1;
+        var day = newDate.getDate();
+        var year = newDate.getFullYear();
+        return month + "/" + day + "/" + year;
+    };
 
     render() {
         return (
@@ -90,7 +98,7 @@ class EditProperties extends Component {
                             <form className="col s12">
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <label htmlFor="address1">Address 1</label>
+                                        <label htmlFor="address1" className="active">Address 1</label>
                                         <input name="address1" value={this.state.address1 || ""} onChange={this.handleInputChange} id="address1" type="text" className="validate" />
                                         
                                     </div>
@@ -98,35 +106,35 @@ class EditProperties extends Component {
                                 <div className="row">
                                     <div className="input-field col s12">
                                         <input name="address2" value={this.state.address2 || ""} onChange={this.handleInputChange} id="address2" type="text" className="validate" />
-                                        <label htmlFor="address2">Address 2</label>
+                                        <label htmlFor="address2" className="active">Address 2</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s4">
                                         <input name="city" value={this.state.city || ""} onChange={this.handleInputChange} id="city" type="text" className="validate" />
-                                        <label htmlFor="city">City</label>
+                                        <label htmlFor="city" className="active">City</label>
                                     </div>
                                     <div className="input-field col s4">
                                         <input name="state" value={this.state.state || ""} onChange={this.handleInputChange} id="state" type="text" className="validate" />
-                                        <label htmlFor="state">State</label>
+                                        <label htmlFor="state" className="active">State</label>
                                     </div>
                                     <div className="input-field col s4">
                                         <input name="zip" value={this.state.zip || ""} onChange={this.handleInputChange} id="zip" type="text" className="validate" />
-                                        <label htmlFor="zip">Zip Code</label>
+                                        <label htmlFor="zip" className="active">Zip Code</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s4">
-                                        <input name="leaseStart" value={this.state.leaseStart || ""} onChange={this.handleInputChange} id="leaseStart" type="text" className="validate" />
-                                        <label htmlFor="leaseStart">Lease Start Date</label>
+                                        <input name="leaseStart" value={this.convertDate(this.state.leaseStart) || ""} onChange={this.handleInputChange} id="leaseStart" type="text" className="validate" />
+                                        <label htmlFor="leaseStart" className="active">Lease Start Date</label>
                                     </div>
                                     <div className="input-field col s4">
-                                        <input name="leaseEnd" value={this.state.leaseEnd || ""} onChange={this.handleInputChange} id="leaseEnd" type="text" className="validate" />
-                                        <label htmlFor="leaseEnd">Lease End Date</label>
+                                        <input name="leaseEnd" value={this.convertDate(this.state.leaseEnd) || ""} onChange={this.handleInputChange} id="leaseEnd" type="text" className="validate" />
+                                        <label htmlFor="leaseEnd" className="active">Lease End Date</label>
                                     </div>
                                     <div className="input-field col s4">
                                         <input name="rentAmt" value={this.state.rentAmt || ""} onChange={this.handleInputChange} id="rentAmt" type="text" className="validate" />
-                                        <label htmlFor="rentAmt">Rent Amount</label>
+                                        <label htmlFor="rentAmt" className="active">Rent Amount</label>
                                     </div>
                                 </div>
                             </form>
