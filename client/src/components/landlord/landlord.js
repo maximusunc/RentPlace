@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./landlord.css";
-import Container from "../container";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 
@@ -12,21 +11,30 @@ class Landlord extends Component {
 
     // on mount, get properties by landlord ID, map through the array and set state
     componentDidMount() {
-        API.getPropertyByLandlord(this.props.id)
-            .then(res => {
-                const propertyIDs = [];
-                res.data.map(property => propertyIDs.push(property._id));
-                this.setState({properties: res.data, propertyIDs: propertyIDs});
-            })
-            .catch(err => console.log(err));
+        this.getProperties(this.props.id);
+    };
+
+    getProperties = (landlordId) => {
+        API.getPropertyByLandlord(landlordId)
+        .then(res => {
+            const propertyIDs = [];
+            res.data.map(property => propertyIDs.push(property._id));
+            this.setState({properties: res.data, propertyIDs: propertyIDs});
+            localStorage.setItem("propertyId", propertyIDs);
+        })
+        .catch(err => console.log(err));
+    }
+
+    handleEdit = (propertyId) => {
+        localStorage.setItem("propertyId", propertyId);
     };
 
     // render results to page
     render() {
         return (
-            <Container>
+            <div>
                 <h3>Welcome, {this.props.name}</h3>
-                <ul>
+                <ul className="personalInfo">
                     <li>Email: {this.props.email}</li>
                     <li>Address1: {this.props.address1}</li>
                     <li>Address2: {this.props.address2}</li>
@@ -35,6 +43,10 @@ class Landlord extends Component {
                     <li>Zip: {this.props.zip}</li>
                     <li>Phone #: {this.props.phone}</li>
                 </ul>
+
+                <Link to={{pathname: "/editUser"}}>
+                    <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>Edit Profile</button>
+                </Link>
         
                 <h3>Properties:</h3>
 
@@ -43,25 +55,42 @@ class Landlord extends Component {
                 {this.state.properties.length ? (
                     this.state.properties.map(property => {
                         if (!property._tenant) {
-                            return <li key={property._id}>{property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link></li>
+                            return <li key={property._id}>
+                                <Link to={{pathname: "/editProperty"}}>
+                                    <button className="waves-effect waves-teal btn-medium" onClick={() => this.handleEdit(property._id)}><i className="material-icons left">edit</i>
+                                        Edit
+                                    </button>
+                                </Link>
+
+                                {property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link>
+                            </li>
                         } else {
-                            return <li key={property._id}>{property.address1}:  {property._tenant.name}</li>
-                        } 
+                            return <li key={property._id}>
+                                <Link to={{pathname: "/editProperty"}}>
+                                    <button className="waves-effect waves-teal btn-medium" onClick={() => this.handleEdit(property._id)}><i className="material-icons left">edit</i>
+                                        Edit
+                                    </button>
+                                </Link>
+
+                                {property.address1}:  {property._tenant.name}
+
+                            </li>
+                        }
                     })
                 ) : (
-                    <p>You don't have any properties yet.</p>
+                    <h5>You don't have any properties yet.</h5>
                 )}
                 </ul>
 
                 <div className="card-action">
         
-                    <Link to={{pathname: "/properties", id: this.props.id }} className="button">
+                    <Link to={{pathname: "/properties"}} className="button">
                     <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
                         Add a property
                     </button>
                     </Link>
             
-                    <Link to={{pathname: "/myservicereqs", id: this.state.propertyIDs }} className="button">
+                    <Link to={{pathname: "/myservicereqs"}} className="button">
                     <button className="waves-effect waves-teal btn-large"><i className="material-icons left">visibility</i>
                         View Service Reqeusts
                     </button>
@@ -69,7 +98,7 @@ class Landlord extends Component {
 
                 </div>
                 
-            </Container>
+            </div>
         );
     };
 };

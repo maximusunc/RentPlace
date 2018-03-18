@@ -52,6 +52,7 @@ class UserPage extends Component {
                     phone: res.data.phone,
                     id: res.data._id
                 });
+                localStorage.setItem("userId", res.data._id);
             })
             .catch(err => console.log(err));
     };

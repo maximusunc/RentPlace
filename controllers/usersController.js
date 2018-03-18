@@ -12,12 +12,12 @@ module.exports = {
   // find tenants not assigned to a property
   findUnassignedTenants: function(req, res) {
     db.User
-      .find({role: "Tenant", assigned: null})
+      .find({role: "Tenant", assigned: false})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // update tenant by email
-  updateTenant: function(req, res) {
+  // update tenant by email or id
+  updateUser: function(req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.email }, req.body)
       .then(dbModel => res.json(dbModel))
@@ -34,6 +34,13 @@ module.exports = {
   findByEmail: function(req, res) {
     db.User
       .findOne({email: req.params.email})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  // find a user by id
+  findById: function(req, res) {
+    db.User
+      .findOne({_id: req.params.id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

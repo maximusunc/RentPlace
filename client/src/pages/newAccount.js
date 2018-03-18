@@ -42,7 +42,8 @@ class NewAccount extends Component {
                     state: this.state.state,
                     zip: this.state.zip,
                     phone: this.state.phone,
-                    password: this.state.password
+                    password: this.state.password,
+                    assigned: false
                 }).then(res => {
                     alert("Successfully added. Now please sign in from the main page.");
                     window.location = "/";

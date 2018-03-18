@@ -6,15 +6,15 @@ router.route("/")
   .get(serviceController.findAll)
   .post(serviceController.create);
 
+  // Matches with "/api/servicereqs/findbyproperty"
+router.route("/findbyproperty")
+  .post(serviceController.findByProperty);
+
 // Matches with "/api/servicereqs/:id"
 router.route("/:id")
   .get(serviceController.findById)
   .put(serviceController.update)
   .delete(serviceController.remove);
-
-  // Matches with "/api/servicereqs/findbyproperty"
-router.route("/findbyproperty")
-  .post(serviceController.findByProperty);
 
 // Matches with "/api/servicereqs/findbytenant/:id"
 router.route("/findbytenant/:id")

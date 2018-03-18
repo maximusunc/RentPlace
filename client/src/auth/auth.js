@@ -10,7 +10,7 @@ export default class Auth {
         domain: 'rentplace.auth0.com',
         clientID: 'v0W04Kiqx2m672ihXU3w5C4KWLclXCx4',
         redirectUri: 'https://rent-place.herokuapp.com/callback',
-        // redirectUri: 'http://localhost:3000',
+        // redirectUri: 'http://localhost:3000/callback',
         audience: 'https://rentplace.auth0.com/userinfo',
         responseType: 'token id_token',
         scope: "openid profile"
@@ -57,6 +57,8 @@ export default class Auth {
         localStorage.removeItem('access_token');
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
+        localStorage.removeItem('propertyId');
+        localStorage.removeItem('userId');
         // navigate to the home route
         history.replace('/home');
     };

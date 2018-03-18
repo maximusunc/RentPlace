@@ -17,8 +17,8 @@ class ServiceReq extends Component {
         const { history } = this.props;
         event.preventDefault();
         API.createServiceReq({
-            _tenant: this.props.location.id.tenant,
-            _property: this.props.location.id.property,
+            _tenant: localStorage.getItem("userId"),
+            _property: localStorage.getItem("propertyId"),
             subject: this.state.subject,
             description: this.state.description,
             notes: this.state.notes
@@ -34,7 +34,7 @@ class ServiceReq extends Component {
         return (
             <div className="card">
                 <div className="card-title">
-                    <h4>Create Service Request</h4>
+                    <h4>Create a Service Request</h4>
                 </div>
                 <div className="card-content">
                     <div className="row">
@@ -62,7 +62,7 @@ class ServiceReq extends Component {
                     
                 </div>
                 <div className="card-action">
-                    <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Create</button>
+                    <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Submit</button>
                 </div>
             </div>
         );

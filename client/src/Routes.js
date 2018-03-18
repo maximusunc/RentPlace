@@ -9,6 +9,8 @@ import ServiceReq from "./pages/servicereq";
 import Properties from "./pages/properties";
 import MyServiceReqs from "./pages/myServiceReqs";
 import AllTenants from "./pages/allTenants";
+import EditProperty from "./pages/editProperty";
+import EditUser from "./pages/editUser";
 import NoMatch from "./pages/noMatch";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -43,6 +45,8 @@ const Routes = () => (
               {/* <Route exact path="/myproperties" render={(props) => <Myproperties auth={auth} {...props} />} /> */}
               <Route exact path="/myservicereqs" render={(props) => <MyServiceReqs auth={auth} {...props} />} />
               <Route exact path="/alltenants" render={(props) => <AllTenants auth={auth} {...props} />} />
+              <Route exact path="/editProperty" render={(props) => <EditProperty auth={auth} {...props} />} />
+              <Route exact path="/editUser" render={(props) => <EditUser auth={auth} {...props} />} />
               <Route render={(props) => <NoMatch auth={auth} {...props} />} />
           </Switch>
         </div>
