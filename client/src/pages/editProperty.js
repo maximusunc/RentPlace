@@ -67,9 +67,9 @@ class EditProperties extends Component {
     handleRemove = (event) => {
         const { history } = this.props;
         event.preventDefault();
-        API.updateTenant(this.state.tenantId, {assigned: ""})
+        API.updateUser(this.state.tenantId, {assigned: "false"})
             .then(res => {
-                API.updatePropertyById(this.props.location.id, {$unset: {_tenant: ""}})
+                API.updatePropertyById(localStorage.getItem("propertyId"), {$unset: {_tenant: ""}})
                 .then(res => {
                     alert("Tenant removed.");
                     history.push("/home");

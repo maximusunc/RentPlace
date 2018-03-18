@@ -13,6 +13,9 @@ router.route("/findunassignedtenants")
 // Matches with "/api/users/:id or email"
 router.route("/:email")
   .get(usersController.findByEmail)
-  .put(usersController.updateTenant);
+  .put(usersController.updateUser);
+
+router.route("/update/:id")
+  .get(usersController.findById);
 
 module.exports = router;

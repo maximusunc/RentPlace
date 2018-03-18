@@ -10,6 +10,9 @@ export default {
   getUser: function(email) {
     return axios.get("/api/users/" + email);
   },
+  editUser: function(id) {
+    return axios.get("/api/users/update/" + id);
+  },
   createProperty: function(property) {
     return axios.post("/api/properties", property);
   },
@@ -31,7 +34,7 @@ export default {
   assignTenant: function(id, tenantUpdate) {
     return axios.put("/api/properties/" + id, tenantUpdate);
   },
-  updateTenant: function(id, tenantAssigned) {
+  updateUser: function(id, tenantAssigned) {
     return axios.put("/api/users/" + id, tenantAssigned);
   },
   getUnassignedTenants: function() {
@@ -47,8 +50,7 @@ export default {
     return axios.delete("/api/servicereqs/" + id);
   },
   getServiceReqByProperty: function (properties) {
-    console.log(properties);
-    return axios.get("/api/servicereqs/findbyproperty", properties);
+    return axios.post("/api/servicereqs/findbyproperty", properties);
   },
   getServiceReqByTenant: function (id) {
     return axios.get("/api/servicereqs/findbytenant/" + id);

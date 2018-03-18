@@ -14,7 +14,6 @@ class Myservicereq extends Component {
     };
 
     getservicereq = (properties) => {
-        console.log(properties);
         API.getServiceReqByProperty(properties)
             .then(res => 
             {
@@ -36,6 +35,8 @@ class Myservicereq extends Component {
         var month = newDate.getMonth() + 1;
         var day = newDate.getDate();
         var year = newDate.getFullYear();
+        // var hour = newDate.getHours();
+        // var minute = newDate.getMinutes();
         return month + "/" + day + "/" + year;
     };
 

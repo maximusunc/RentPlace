@@ -56,6 +56,10 @@ class Tenant extends Component {
                     <li>Zip: {this.props.zip}</li>
                     <li>Phone #: {this.props.phone}</li>
                 </ul>
+
+                <Link to={{pathname: "/editUser"}}>
+                    <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>Edit Profile</button>
+                </Link>
         
                 <h3>Property Info:</h3>
 
