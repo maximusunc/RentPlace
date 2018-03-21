@@ -24,7 +24,7 @@ class AllTenants extends Component {
 
     handleTenantSelect = (tenant) => {
         const { history } = this.props;
-        const id = this.props.location.id;
+        const id = localStorage.getItem("propertyId");
         API.assignTenant(id, {$set: {_tenant: tenant}})
             .then(res => {
                 API.updateUser(tenant, {$set: {assigned: true}})
