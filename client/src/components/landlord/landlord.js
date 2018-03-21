@@ -14,6 +14,7 @@ class Landlord extends Component {
         this.getProperties(this.props.id);
     };
 
+    // Get all properties and set their ids in local storage
     getProperties = (landlordId) => {
         API.getPropertyByLandlord(landlordId)
         .then(res => {
@@ -25,6 +26,7 @@ class Landlord extends Component {
         .catch(err => console.log(err));
     }
 
+    // whenever landlord goes to one of their property pages, update local storage to just that property
     handleEdit = (propertyId) => {
         localStorage.setItem("propertyId", propertyId);
     };
@@ -33,6 +35,7 @@ class Landlord extends Component {
     render() {
         return (
             <div>
+                {/* Personal Info */}
                 <h3>Welcome, {this.props.name}</h3>
                 <ul className="personalInfo">
                     <li>Email: {this.props.email}</li>
@@ -44,6 +47,7 @@ class Landlord extends Component {
                     <li>Phone #: {this.props.phone}</li>
                 </ul>
 
+                {/* Option to update personal info */}
                 <Link to={{pathname: "/editUser"}}>
                     <button className="waves-effect waves-teal btn-medium"><i className="material-icons left">edit</i>Edit Profile</button>
                 </Link>
@@ -62,7 +66,7 @@ class Landlord extends Component {
                                     </button>
                                 </Link>
 
-                                {property.address1}:  <Link to={{pathname: "/allTenants", id: property._id }}>Assign a tenant</Link>
+                                {property.address1}:  <Link to={{pathname: "/allTenants" }} onClick={() => this.handleEdit(property._id)}>Assign a tenant</Link>
                             </li>
                         } else {
                             return <li key={property._id}>
@@ -84,17 +88,28 @@ class Landlord extends Component {
 
                 <div className="card-action">
         
+                    {/* Link to add property page */}
                     <Link to={{pathname: "/properties"}} className="button">
                     <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
                         Add a property
                     </button>
                     </Link>
             
+                    {/* Link to all service requests for all owned properties */}
                     <Link to={{pathname: "/myservicereqs"}} className="button">
                     <button className="waves-effect waves-teal btn-large"><i className="material-icons left">visibility</i>
                         View Service Reqeusts
                     </button>
                     </Link>
+
+                    {/* Working on lease upload */}
+                    {/* <button id="lease" className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
+                        <form action="api/lease/" encType="multipart/form-data" method="post" >
+                            <input id="file" type="file" name="lease" accept=".pdf" />
+                            <label htmlFor="lease">Lease</label>
+                            <input type="submit" name="Submit" value="Upload" />
+                        </form>
+                    </button> */}
 
                 </div>
                 

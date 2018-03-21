@@ -47,7 +47,7 @@ class EditProperties extends Component {
     handleFormSubmit = (event) => {
         const { history } = this.props;
         event.preventDefault();
-        API.updatePropertyById(this.props.location.id, {
+        API.updatePropertyById(localStorage.getItem("propertyId"), {
             address1: this.state.address1,
             address2: this.state.address2,
             city: this.state.city,
