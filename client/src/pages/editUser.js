@@ -3,21 +3,19 @@ import Container from "../components/container";
 import UserUpdateForm from "../components/userUpdateForm";
 import API from "../utils/API";
 
-const defaultState = {
-    name: "",
-    address1: "",
-    address2: "",
-    city: "",
-    state: "",
-    zip: "",
-    phone: ""
-};
-
+// Update User info page, and renders the update user form component
 class EditUser extends Component {
     state = {
-        defaultState
+        name: "",
+        address1: "",
+        address2: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone: ""
     };
 
+    // Gets user info from database from userId in localstorage
     componentDidMount() {
         API.editUser(localStorage.getItem("userId"))
             .then(res => {

@@ -17,6 +17,7 @@ class EditProperties extends Component {
     };
 
     componentDidMount() {
+        // gets property info by local storage id
         API.getPropertyById(localStorage.getItem("propertyId"))
             .then(res => {
                 this.setState({
@@ -29,6 +30,7 @@ class EditProperties extends Component {
                     leaseEnd: res.data.leaseEnd,
                     rentAmt: res.data.rentAmt
                 });
+                // If property has a tenant, set their name and id in state
                 if (res.data._tenant) {
                     this.setState({
                         tenant: res.data._tenant.name,
@@ -47,6 +49,7 @@ class EditProperties extends Component {
     handleFormSubmit = (event) => {
         const { history } = this.props;
         event.preventDefault();
+        // The user cannot change their email or password due to Auth0 constraints
         API.updatePropertyById(localStorage.getItem("propertyId"), {
             address1: this.state.address1,
             address2: this.state.address2,
@@ -64,11 +67,14 @@ class EditProperties extends Component {
             .catch(err => alert("Something went wrong. Please try again."));
     };
 
+    // Unassigns tenant from property
     handleRemove = (event) => {
         const { history } = this.props;
         event.preventDefault();
+        // unassigns the tenant
         API.updateUser(this.state.tenantId, {assigned: "false"})
             .then(res => {
+                // removes tenant's id from property
                 API.updatePropertyById(localStorage.getItem("propertyId"), {$unset: {_tenant: ""}})
                 .then(res => {
                     alert("Tenant removed.");
@@ -78,6 +84,7 @@ class EditProperties extends Component {
             .catch(err => alert("Something went wrong. Please try again."));
     };
 
+    // Converts the string date from DB into more legible date
     convertDate = (date) => {
         var newDate = new Date(date);
         var month = newDate.getMonth() + 1;

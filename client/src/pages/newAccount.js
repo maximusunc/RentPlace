@@ -31,7 +31,9 @@ class NewAccount extends Component {
         event.preventDefault();
         if (this.state.password) {
             const password = this.state.password.length;
+            // simple password validation
             if (password >= 6) {
+                // Makes an Auth0 account with email and password, and also puts the rest of the info into DB
                 API.userSignUp({
                     name: this.state.name,
                     role: this.state.selected,

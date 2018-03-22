@@ -22,6 +22,7 @@ class UserPage extends Component {
     };
 
     componentDidMount() {
+        // All of this is Auth0 checking for a signed in user and sets their profile in storage
         this.setState({ profile: {} });
         const { userProfile, getProfile } = this.props.auth;
         if (!userProfile) {
@@ -38,6 +39,7 @@ class UserPage extends Component {
     };
 
     getUser = (email) => {
+        // if the user is signed in, then go and get their info from the DB
         API.getUser(email)
             .then(res => {
                 this.setState({
@@ -52,6 +54,7 @@ class UserPage extends Component {
                     phone: res.data.phone,
                     id: res.data._id
                 });
+                // sets their id in local storage
                 localStorage.setItem("userId", res.data._id);
             })
             .catch(err => console.log(err));
@@ -64,6 +67,7 @@ class UserPage extends Component {
             <div className="row">
                 <div className="col s12 m12">
                     <div className="card">
+                        {/* depending on user signed in, either display landlord or tenant pages */}
                         {this.state.role === "Landlord" ? (
                             <div>
                                 <Landlord 

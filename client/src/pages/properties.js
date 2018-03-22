@@ -19,6 +19,7 @@ class Properties extends Component {
         this.setState({[name]: value});
     };
 
+    // creates a new property and uses the users local storage id as the landlord
     handleFormSubmit = (event) => {
         const { history } = this.props;
         event.preventDefault();

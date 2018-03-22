@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../container";
 
+// Rendered for every available tenant.
 const Tenant = (props) =>
     <Container>
         <h5>Name:  {props.name}</h5>

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Form for creating an account
 const NewAccCard = props =>
     <div className="card">
         <div className="card-title">

@@ -1,7 +1,8 @@
 .page-footer {
     border-top: 1px black solid;
     background: rgb(48,220,77);
-    opacity: 0.8;
+    background-image: url("../../images/asfalt-dark.png");
+    opacity: 0.85;
     margin: 0;
     position: absolute;
     bottom: 0;

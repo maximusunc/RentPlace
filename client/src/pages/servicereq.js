@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Container from "../components/container";
 
 class ServiceReq extends Component {
     state = {
@@ -16,6 +17,7 @@ class ServiceReq extends Component {
     handleFormSubmit = (event) => {
         const { history } = this.props;
         event.preventDefault();
+        // creating a service request saves both user id and property id from local storage along with user input
         API.createServiceReq({
             _tenant: localStorage.getItem("userId"),
             _property: localStorage.getItem("propertyId"),
@@ -32,6 +34,7 @@ class ServiceReq extends Component {
 
     render() {
         return (
+            <Container>
             <div className="card">
                 <div className="card-title">
                     <h4>Create a Service Request</h4>
@@ -65,6 +68,7 @@ class ServiceReq extends Component {
                     <button className="waves-effect waves-teal btn-large" onClick={this.handleFormSubmit}><i className="material-icons left">add</i>Submit</button>
                 </div>
             </div>
+            </Container>
         );
     };
 

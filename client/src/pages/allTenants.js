@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import Container from "../components/container";
 import API from "../utils/API";
-import TenantList from "../components/tenantList";
 import Tenant from "../components/allTenants";
 
 class AllTenants extends Component {
-
     state = {
         tenants: []
     };
@@ -14,6 +12,7 @@ class AllTenants extends Component {
         this.getTenants();
     };
 
+    // Gets all tenants who are unassigned to a property
     getTenants = () => {
         API.getUnassignedTenants()
             .then(res => {
@@ -22,6 +21,8 @@ class AllTenants extends Component {
             .catch(err => console.log(err));
     };
 
+    // Assigns the selected tenant to that property
+    // That property will then show up on that tenant's user page
     handleTenantSelect = (tenant) => {
         const { history } = this.props;
         const id = localStorage.getItem("propertyId");
@@ -40,23 +41,23 @@ class AllTenants extends Component {
     render() {
         return (
             <Container>
-                    <div className="card">
-                        <h4>Assign a tenant to your property:</h4>
-                        <TenantList>
-                            {this.state.tenants.length ? (
-                                this.state.tenants.map(tenant => (
-                                    <Tenant
-                                        name={tenant.name}
-                                        email={tenant.email}
-                                        handleClick={() => this.handleTenantSelect(tenant._id)}
-                                        key={tenant._id}
-                                    />
-                                ))
-                            ) : (
-                                <h5>There are no available tenants to assign.</h5>
-                            )}
-                        </TenantList>
-                    </div>
+                <div className="card">
+                    <h4>Assign a tenant to your property:</h4>
+
+                    {this.state.tenants.length ? (
+                        this.state.tenants.map(tenant => (
+                            <Tenant
+                                name={tenant.name}
+                                email={tenant.email}
+                                handleClick={() => this.handleTenantSelect(tenant._id)}
+                                key={tenant._id}
+                            />
+                        ))
+                    ) : (
+                        <h5>There are no available tenants to assign.</h5>
+                    )}
+
+                </div>
             </Container>
         );
     };
