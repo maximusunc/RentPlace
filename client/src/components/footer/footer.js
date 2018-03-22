@@ -9,7 +9,7 @@ const Footer = () =>
             </div>
             <div id="social" className="row">
                 <div className="col s4">
-                    <a href="https://www.facebook.com/grndprxguy1" target="blank" rel="noopener noreferrer"><img src="./images/facebook.png" className="footimg" alt="Facebook" /></a>
+                    <a href="https://www.linkedin.com/in/maxwell-s-wang/" target="blank" rel="noopener noreferrer"><img src="./images/linkedin.png" className="footimg" alt="LinkedIn" /></a>
                 </div>
                 <div className="col s4">
                     <a href="https://github.com/maximusunc/RentPlace" target="_blank" rel="noopener noreferrer"><img src="./images/github.png" className="footimg" alt="Github" /></a>

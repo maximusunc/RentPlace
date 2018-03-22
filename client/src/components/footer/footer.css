@@ -1,5 +1,6 @@
 .page-footer {
-    background: #2af42a;
+    border-top: 1px black solid;
+    background: rgb(48,220,77);
     opacity: 0.8;
     margin: 0;
     position: absolute;
@@ -7,7 +8,9 @@
     width: 100%;
     flex-shrink: 0;
 }
-  
+.footer-copyright {
+    border-top: 1px grey solid;
+}
 .footimg {
     width: 60px;
     height: 60px;
@@ -17,7 +20,9 @@
     display: inline-block;
     padding: 5px;
 }
-
+.aptsimg {
+    border-radius: 5px;
+}
 #social {
     display: flex;
     justify-content: space-between;

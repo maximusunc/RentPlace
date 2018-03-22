@@ -42,13 +42,13 @@ h3 {
 }
 
 #home {
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 10px;
 }
 
 #logout {
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 10px;
 }

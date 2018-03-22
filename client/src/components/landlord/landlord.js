@@ -62,17 +62,17 @@ class Landlord extends Component {
                             return <li key={property._id}>
                                 <Link to={{pathname: "/editProperty"}}>
                                     <button className="waves-effect waves-teal btn-medium" onClick={() => this.handleEdit(property._id)}><i className="material-icons left">edit</i>
-                                        Edit
+                                        Edit Property
                                     </button>
                                 </Link>
 
-                                {property.address1}:  <Link to={{pathname: "/allTenants" }} onClick={() => this.handleEdit(property._id)}>Assign a tenant</Link>
+                                {property.address1}:  <Link to={{pathname: "/allTenants" }} onClick={() => this.handleEdit(property._id)} className="assign" >Assign a tenant</Link>
                             </li>
                         } else {
                             return <li key={property._id}>
                                 <Link to={{pathname: "/editProperty"}}>
                                     <button className="waves-effect waves-teal btn-medium" onClick={() => this.handleEdit(property._id)}><i className="material-icons left">edit</i>
-                                        Edit
+                                        Edit Property
                                     </button>
                                 </Link>
 
