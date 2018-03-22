@@ -21,6 +21,7 @@ class Landlord extends Component {
             const propertyIDs = [];
             res.data.map(property => propertyIDs.push(property._id));
             this.setState({properties: res.data, propertyIDs: propertyIDs});
+            // Sets all property ids in local storage
             localStorage.setItem("propertyId", propertyIDs);
         })
         .catch(err => console.log(err));

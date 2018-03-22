@@ -1,5 +1,6 @@
 import React from "react";
 
+// Form for updating user info
 const UserUpdateForm = props =>
     <div className="card">
         <div className="card-title">

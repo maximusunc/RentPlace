@@ -8,18 +8,18 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-var Storage = multer.diskStorage({
-  destination: function(req, file, callback) {
-      callback(null, "./Images");
-  },
-  filename: function(req, file, callback) {
-      callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
-  }
-});
+// var Storage = multer.diskStorage({
+//   destination: function(req, file, callback) {
+//       callback(null, "./Images");
+//   },
+//   filename: function(req, file, callback) {
+//       callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+//   }
+// });
 
-var upload = multer({
-  storage: Storage
-}).single("uploadLease"); //Field name and max count
+// var upload = multer({
+//   storage: Storage
+// }).single("uploadLease"); //Field name and max count
 
 
 // Configure body parser for AJAX requests
@@ -46,14 +46,14 @@ mongoose.connect(
   }
 );
 
-app.post("/api/lease", function(req, res) {
-  upload(req, res, function(err) {
-      if (err) {
-          return res.end("Something went wrong!");
-      }
-      return res.end("File uploaded sucessfully!.");
-  });
-});
+// app.post("/api/lease", function(req, res) {
+//   upload(req, res, function(err) {
+//       if (err) {
+//           return res.end("Something went wrong!");
+//       }
+//       return res.end("File uploaded sucessfully!.");
+//   });
+// });
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

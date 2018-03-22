@@ -1,9 +1,12 @@
 import React from "react";
 import "./footer.css";
 
+// Footer component
 const Footer = () =>
     <footer className="page-footer">
         <div className="container">
+
+        {/* Apartments image and links to social sites */}
             <div className="row">
                 <img src="./images/apts.jpg" className="aptsimg responsive-img" alt="apartments" />
             </div>
@@ -19,6 +22,8 @@ const Footer = () =>
                 </div>
             </div>
         </div>
+
+        {/* Copyright info at the very bottom of the page */}
         <div className="footer-copyright">
             <div className="container">
                 © 2018 MaMaJ Productions

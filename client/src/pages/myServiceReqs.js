@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Container from "../components/container";
 import API from "../utils/API";
-import ServiceReqList from "../components/serviceReqList";
 import ServiceReq from "../components/servicereq";
 
 class Myservicereq extends Component {
@@ -10,6 +9,7 @@ class Myservicereq extends Component {
     };
 
     componentDidMount() {
+        // Calls the getservicereq function and passes in an array of property ids in local storage
         this.getservicereq(localStorage.getItem("propertyId").split(","));
     };
 
@@ -22,14 +22,16 @@ class Myservicereq extends Component {
             .catch(err => console.log(err));
     };
 
-    handleDelete = (id) => {
+    handleComplete = (id) => {
         API.deleteServiceReq(id)
             .then(res => {
+                alert("Service request completed!");
                 window.location = "/home";
             })
             .catch(err => alert("Something went wrong"));
     };
 
+    // Converts date string from DB into legible date
     convertDate = (date) => {
         var newDate = new Date(date);
         var month = newDate.getMonth() + 1;
@@ -43,12 +45,13 @@ class Myservicereq extends Component {
     render() {
         return (
             <Container>
-                    <div className="card">
-                        <h4><i className="material-icons small">build</i>  Open Service Requests</h4>
-                        {this.state.servicereq.length ? (
-                            <ServiceReqList>
-                                {this.state.servicereq.map( servicereq => {
-                                return (
+                <div className="card">
+                    <h4><i className="material-icons small">build</i>  Open Service Requests</h4>
+                    
+                    {/* Shows each service request open, if there are none then displays bottom message */}
+                    {this.state.servicereq.length ? (
+                        this.state.servicereq.map( servicereq => {
+                            return (
                                 <ServiceReq   
                                     key={servicereq._id}
                                     property={servicereq._property.address1}      
@@ -56,16 +59,15 @@ class Myservicereq extends Component {
                                     description={servicereq.description}
                                     notes={servicereq.notes}
                                     date={this.convertDate(servicereq.date)}
-                                    handleDelete={() => this.handleDelete(servicereq._id)}
+                                    handleComplete={() => this.handleComplete(servicereq._id)}
                                 />
-                                );
-                            })}
-                            </ServiceReqList>
-                        ) : (
-                            <h5>You don't have any open service requests.</h5>
-                        )}
-                        
-                    </div>
+                            );
+                        })  
+                    ) : (
+                        <h5>You don't have any open service requests.</h5>
+                    )}
+                    
+                </div>
             </Container>
         );
     };

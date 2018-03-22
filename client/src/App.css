@@ -1,5 +1,6 @@
 body {
     background: #136289;
+    background-image: url("./images/asfalt-dark.png");
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -41,16 +42,25 @@ h3 {
     font-size: 40px;
 }
 
+li {
+    font-size: 20px;
+    color: #e0e0e0;
+    text-align: left;
+    margin-left: 30%;
+}
+
 #home {
     position: fixed;
     left: 10px;
     top: 10px;
+    opacity: 0.75;
 }
 
 #logout {
     position: fixed;
     right: 10px;
     top: 10px;
+    opacity: 0.85;
 }
 
 .button {
@@ -59,4 +69,41 @@ h3 {
 
 input, textarea {
     color: #cccccc;
+}
+
+input[type=text]:not(.browser-default) {
+    font-size: 20px;
+}
+
+.input-field label {
+    font-size: 20px;
+}
+
+.card {
+    border: 1px black solid;
+    border-radius: 20px;
+    background: #227c7c;
+    background-image: url("./images/green-dust-and-scratches.png");
+    text-align: center;
+    opacity: 0.85;
+    height: 100%;
+}
+
+.card .card-action:last-child {
+    width: 100%;
+    border-radius: 20px;
+    background-image: url("./images/green-dust-and-scratches.png");
+}
+
+.waves-effect.waves-teal.btn-large {
+    background-color: rgb(48,220,77);
+    margin: 5px 10px;
+}
+
+.waves-effect.waves-teal.btn-medium {
+    background-color: rgb(0,56,104);
+    margin: 10px 10px;
+    color: #fff;
+    border: 0px;
+    border-radius: 2px;
 }

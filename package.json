@@ -1,5 +1,5 @@
 {
-  "name": "RentPlace",
+  "name": "rentplace",
   "version": "1.0.0",
   "description": "Landlord/tenant app",
   "main": "server.js",

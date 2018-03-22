@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Container from "../container";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import "./tenant.css";
 
+// Renders if user is a tenant
 class Tenant extends Component {
     state = {
         address1: "",
@@ -13,28 +14,34 @@ class Tenant extends Component {
         leaseStart: "",
         leaseEnd: "",
         rentAmt: "",
-        id: ""
+        id: "",
+        landlord: "",
+        email: ""
     };
 
     componentDidMount() {
         API.getPropertyByTenant(this.props.id)
             .then(res => {
                 this.setState({
-                address1: res.data.address1,
-                address2: res.data.address2,
-                city: res.data.city,
-                state: res.data.state,
-                zip: res.data.zip,
-                leaseStart: res.data.leaseStart,
-                leaseEnd: res.data.leaseEnd,
-                rentAmt: res.data.rentAmt,
-                id: res.data._id
+                    address1: res.data.address1,
+                    address2: res.data.address2,
+                    city: res.data.city,
+                    state: res.data.state,
+                    zip: res.data.zip,
+                    leaseStart: res.data.leaseStart,
+                    leaseEnd: res.data.leaseEnd,
+                    rentAmt: res.data.rentAmt,
+                    id: res.data._id,
+                    landlord: res.data._landlord.name,
+                    email: res.data._landlord.email
                 });
+                // Sets propertyId in local storage to property assigned this tenant
                 localStorage.setItem("propertyId", res.data._id);
             })
             .catch(err => console.log(err));
     };
 
+    // Converts date string from DB into legible date
     convertDate = (date) => {
         var newDate = new Date(date);
         var month = newDate.getMonth() + 1;
@@ -45,7 +52,7 @@ class Tenant extends Component {
 
     render() {
         return (
-            <Container>
+            <div>
                 <h3>Welcome, {this.props.name}</h3>
                 <ul className="personalInfo">
                     <li>Email: {this.props.email}</li>
@@ -63,8 +70,11 @@ class Tenant extends Component {
         
                 <h3>Property Info:</h3>
 
+                {/* Renders data if assigned a property, if not notify tenant that landlord hasn't add them */}
                 {this.state.address1 ? (
-                    <ul>
+                    <ul id="propertyInfo">
+                        <li>Landlord: {this.state.landlord}</li>
+                        <li>Contact: {this.state.email}</li>
                         <li>Address1: {this.state.address1}</li>
                         <li>Address2: {this.state.address2}</li>
                         <li>City: {this.state.city}</li>
@@ -78,12 +88,12 @@ class Tenant extends Component {
                     <h5>Your landlord needs to add you to a property</h5>
                 )}
                 
-                
+                {/* Only renders if a property has been assigned this tenant */}
                 {this.state.address1 ? (
                     <div className="card-action">
                         <Link to={{pathname: "/servicereq"}}>
                             <button className="waves-effect waves-teal btn-large"><i className="material-icons left">add</i>
-                                Create a Reqeust
+                                Create a Service Reqeust
                             </button>
                         </Link>
 
@@ -97,7 +107,7 @@ class Tenant extends Component {
                     null
                 )}
                 
-            </Container>
+            </div>
         );
     };
 };
