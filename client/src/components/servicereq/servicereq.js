@@ -12,7 +12,7 @@ const ServiceReq = (props) =>
                 <li>Notes: {props.notes}</li>
                 <li>Date Entered: {props.date}</li>
             </ul>
-            <button onClick={props.handleDelete} className="waves-effect waves-teal btn-medium"><i className="material-icons left">delete</i>
+            <button onClick={props.handleDelete} className="waves-effect waves-teal btn-medium delete"><i className="material-icons left">delete</i>
                 Delete
             </button>
         </div>

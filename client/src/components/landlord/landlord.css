@@ -1,7 +1,7 @@
 li {
     color: #e0e0e0;
     text-align: left;
-    margin-left: 35%;
+    margin-left: 30%;
 }
 
 .personalInfo {
@@ -9,4 +9,7 @@ li {
 }
 #lease {
     height: 200px;
+}
+.assign {
+    color: rgb(48,220,77);
 }

@@ -1,5 +1,8 @@
 .servicereq {
     border: 1px #cccccc solid;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+.waves-effect.waves-teal.btn-medium.delete {
+    background-color: rgb(255, 51, 51, 0.9);
 }
