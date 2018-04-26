@@ -32,7 +32,8 @@ router.post("/signup", (req, res) => {
         city: req.body.city,
         state: req.body.state,
         zip: req.body.zip,
-        phone: req.body.phone
+        phone: req.body.phone,
+        assigned: false,
       })
       .then(dbModel => {
         console.log(dbModel);
